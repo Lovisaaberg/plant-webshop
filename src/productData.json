@@ -1,0 +1,104 @@
+{
+  "products": [
+  {
+    "id": 1,
+    "name": "Sour Rainbow Belts",
+    "description": "Tangy and colorful sour belts with fruity flavors.",
+    "price": 2.99,
+    "stock": 120,
+    "category": "Sour Candy",
+    "image": "https://images.unsplash.com/photo-1726591383648-5b5cbe1da1a2?q=80&w=2300&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "tags": ["sour", "rainbow", "vegan"]
+  },
+  {
+    "id": 2,
+    "name": "Milk Chocolate Almonds",
+    "description": "Crunchy almonds covered in smooth milk chocolate.",
+    "price": 4.49,
+    "stock": 85,
+    "category": "Chocolate",
+    "image": "https://images.unsplash.com/photo-1726591383648-5b5cbe1da1a2?q=80&w=2300&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "tags": ["chocolate", "nuts", "classic"]
+  },
+  {
+    "id": 3,
+    "name": "Licorice Mix",
+    "description": "A variety of sweet and salty licorice pieces.",
+    "price": 3.25,
+    "stock": 65,
+    "category": "Licorice",
+    "image": "https://images.unsplash.com/photo-1726591383648-5b5cbe1da1a2?q=80&w=2300&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "tags": ["licorice", "salty", "scandinavian"]
+  },
+  {
+    "id": 4,
+    "name": "Gummy Bears",
+    "description": "Classic fruit-flavored gummy bears in assorted colors.",
+    "price": 1.99,
+    "stock": 150,
+    "category": "Gummy",
+    "image": "https://images.unsplash.com/photo-1726591383648-5b5cbe1da1a2?q=80&w=2300&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "tags": ["gummy", "fruit", "kid-friendly"]
+  },
+  {
+    "id": 5,
+    "name": "Chocolate-Covered Marshmallows",
+    "description": "Fluffy marshmallows dipped in rich dark chocolate.",
+    "price": 3.95,
+    "stock": 40,
+    "category": "Chocolate",
+    "image": "https://images.unsplash.com/photo-1726591383648-5b5cbe1da1a2?q=80&w=2300&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "tags": ["chocolate", "marshmallow", "gift"]
+  },
+  {
+    "id": 6,
+    "name": "Strawberry Licorice Twists",
+    "description": "Soft, chewy strawberry-flavored licorice twists.",
+    "price": 2.49,
+    "stock": 95,
+    "category": "Licorice",
+    "image": "https://images.unsplash.com/photo-1726591383648-5b5cbe1da1a2?q=80&w=2300&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "tags": ["licorice", "fruit", "chewy"]
+  },
+  {
+    "id": 7,
+    "name": "Peach Rings",
+    "description": "Sugary gummy rings bursting with juicy peach flavor.",
+    "price": 2.75,
+    "stock": 110,
+    "category": "Gummy",
+    "image": "https://example.com/images/peach-rings.jpg",
+    "tags": ["gummy", "fruit", "sweet"]
+  },
+  {
+    "id": 8,
+    "name": "Mint Chocolate Thins",
+    "description": "Thin layers of dark chocolate infused with refreshing mint.",
+    "price": 3.85,
+    "stock": 60,
+    "category": "Chocolate",
+    "image": "https://example.com/images/mint-chocolate-thins.jpg",
+    "tags": ["mint", "chocolate", "after-dinner"]
+  },
+  {
+    "id": 9,
+    "name": "Bubblegum Balls",
+    "description": "Classic colorful bubblegum balls with fruity flavors.",
+    "price": 1.49,
+    "stock": 180,
+    "category": "Chewing Gum",
+    "image": "https://example.com/images/bubblegum-balls.jpg",
+    "tags": ["gum", "fruit", "fun"]
+  },
+  {
+    "id": 10,
+    "name": "Caramel Fudge Bites",
+    "description": "Soft caramel fudge squares with a creamy texture.",
+    "price": 4.15,
+    "stock": 50,
+    "category": "Fudge",
+    "image": "https://example.com/images/caramel-fudge.jpg",
+    "tags": ["caramel", "fudge", "soft"]
+  }
+]
+}

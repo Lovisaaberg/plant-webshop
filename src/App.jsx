@@ -1,18 +1,19 @@
-import { Header } from './components/Header'
-import { HeroSection } from './components/HeroSection'
-import { ProductsSection } from './components/ProductsSection'
-import { Footer } from './components/Footer'
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { LandingPage } from "./pages/LandingPage"
+import { ProductPage } from "./pages/ProductPage"
 import './App.css'
 
 function App() {
 
   return (
-    <>
-      <Header />
-      <HeroSection />
-      <ProductsSection />
-      <Footer />
-    </>
+    <BrowserRouter>
+      <main>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/product/:id" element={<ProductPage />} />
+        </Routes>
+      </main>
+    </BrowserRouter>
   )
 }
 
