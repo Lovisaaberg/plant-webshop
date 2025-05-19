@@ -1,6 +1,8 @@
 import { useParams } from "react-router-dom"
 import { products } from "../productData"
 import { appContentStore } from "../stores/appContentStore"
+import { Header } from "../components/Header"
+import { Footer } from "../components/Footer"
 import { Button } from "../components/Button"
 
 export const ProductPage = () => {
@@ -16,6 +18,7 @@ export const ProductPage = () => {
 
   return (
     <div>
+      <Header />
       <img
         src={product.image}
         alt="Product Image"
@@ -30,6 +33,7 @@ export const ProductPage = () => {
       <Button
         text="Remove from Cart"
         func={() => removeFromCart(product.id)}/>
+      <Footer />
     </div>
   )
 }
