@@ -1,10 +1,12 @@
 import { create } from 'zustand'
 
-export const useAppContentStore = create((set) => ({
+export const appContentStore = create((set) => ({
   cart: [],
 
   addToCart: (item) =>
     set((state) => {
+      console.log('state.cart', state.cart)
+      console.log('item', item)
       const existingItem = state.cart.find((i) => i.id === item.id);
       if (existingItem) {
         return {
