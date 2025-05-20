@@ -1,7 +1,6 @@
 const express = require("express");
 require("dotenv").config();
 const router = express.Router();
-console.log("Stripe secret key:", process.env.STRIPE_SECRET_KEY);
 
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
@@ -14,7 +13,7 @@ router.post("/create-checkout-session", async (req, res) => {
         name: product.name,
         images: [product.image],
       },
-      unit_amount: product.price,
+      unit_amount: product.price * 100,
     },
     quantity: product.quantity,
   }));
