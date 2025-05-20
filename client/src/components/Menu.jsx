@@ -1,13 +1,23 @@
+import { NavLink } from "react-router-dom"
 
+export const Menu = ({ handleMenuClick }) => {
+  const menuLinks = [
+    { label: "Plants", to: "/plants" },
+    { label: "Plant care tips", to: "/plantcare" },
+    { label: "About Us", to: "/aboutus" },
+    { label: "Contact", to: "/contact" },
+  ]
 
-export const Menu = () => {
   return (
     <div>
-      <ul style={{display: "flex", gap: "20px", justifyContent: "center"}}>
-        <li>Home</li>
-        <li>Products</li>
-        <li>About</li>
-        <li>Contact</li>
+      <ul style={{ display: "flex", gap: "20px", justifyContent: "center" }}>
+        {menuLinks.map((link, index) => (
+          <li key={`navlink-${index}`}>
+            <NavLink to={link.to} onClick={handleMenuClick}>
+              {link.label}
+            </NavLink>
+          </li>
+        ))}
       </ul>
     </div>
   )
