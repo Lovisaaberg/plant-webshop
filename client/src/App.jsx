@@ -2,12 +2,13 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { LandingPage } from "./pages/LandingPage"
 import { ProductPage } from "./pages/ProductPage"
 import { CheckoutPage } from "./pages/CheckoutPage"
-import './App.css'
+import { Header } from "./components/Header"
+import "./App.css"
 
 function App() {
-
   return (
     <BrowserRouter>
+      <Header />
       <main>
         <Routes>
           <Route path="/" element={<LandingPage />} />
