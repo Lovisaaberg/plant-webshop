@@ -10,7 +10,7 @@
       "price": 129,
       "stock": 10,
       "category": "Ferns",
-      "image": "/images/crispy-wave.jpg"
+      "image": "https://placehold.co/600x400"
     },
     {
       "id": 2,
