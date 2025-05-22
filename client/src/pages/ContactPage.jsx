@@ -46,55 +46,63 @@ export const ContactPage = () => {
   }
 
   return (
-    <div>
-      <h2>Contact</h2>
-      <p>
-        Whether you have questions about plant care, need help with your order,
-        or just want to know more about our products - we'd love to hear from
-        you.
-      </p>
-      <p>Fill in the form, and we'll get back to you as soon as we can.</p>
-      <div className="flex gap-4">
+    <div className="flex flex-col gap-8 items-center justify-center p-4">
+      <div className="max-w-xs lg:max-w-3xl mx-auto flex flex-col gap-4 items-center justify-center">
+        <h2 className="text-3xl">Contact</h2>
+        <p className="text-base">
+          Whether you have questions about plant care, need help with your
+          order, or just want to know more about our products - we'd love to
+          hear from you.
+        </p>
+        <p className="text-base">
+          Fill in the form, and we'll get back to you as soon as we can.
+        </p>
+      </div>
+      <div className="container mx-auto flex gap-4">
         <img
-          className="w-[100px] h-[300px] object-cover"
+          className="max-w-1/3 h-[300px] object-cover"
           src={plant1}
           alt="Green plant with white background"
         />
         <img
-          className="w-[100px] h-[300px] object-cover"
+          className="max-w-1/3 h-[300px] object-cover"
           src={plant2}
           alt="Green plant with white background"
         />
         <img
-          className="w-[100px] h-[300px] object-cover"
+          className="max-w-1/3 h-[300px] object-cover"
           src={plant3}
           alt="Green plant with white background"
         />
       </div>
-      <form>
-        <label>
-          Name
-          <input
-            type="text"
-            name="name"
-            required
-            value={formData.name}
-            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-          />
-        </label>
-        <label>
-          E-mail
-          <input
-            type="email"
-            name="email"
-            required
-            value={formData.email}
-            onChange={(e) =>
-              setFormData({ ...formData, email: e.target.value })
-            }
-          />
-        </label>
-        <label>
+      <form className="max-w-xs lg:max-w-3xl mx-auto flex flex-col gap-4 text-xl text-left">
+        <div className="flex flex-col gap-4 lg:flex-row lg:gap-4">
+          <label className="flex flex-col gap-2">
+            Name
+            <input
+              type="text"
+              name="name"
+              required
+              value={formData.name}
+              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+              className="border border-gray-700"
+              />
+          </label>
+          <label className="flex flex-col gap-2">
+            E-mail
+            <input
+              type="email"
+              name="email"
+              required
+              value={formData.email}
+              onChange={(e) =>
+                setFormData({ ...formData, email: e.target.value })
+              }
+              className="border border-gray-700"
+              />
+          </label>
+        </div>
+        <label className="flex flex-col gap-2">
           Your message
           <textarea
             name="message"
@@ -103,6 +111,8 @@ export const ContactPage = () => {
             onChange={(e) =>
               setFormData({ ...formData, message: e.target.value })
             }
+            className="border border-gray-700"
+            rows="5"
           ></textarea>
         </label>
         <Button text="Send message" func={handleSubmit} />
