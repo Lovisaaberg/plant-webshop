@@ -1,7 +1,5 @@
 import emailjs from "@emailjs/browser"
 import { useState } from "react"
-import { Header } from "../components/Header"
-import { Footer } from "../components/Footer"
 import { Button } from "../components/Button"
 
 const SERVICE_ID = import.meta.env.VITE_EMAIL_SERVICE_ID
@@ -46,7 +44,6 @@ export const ContactPage = () => {
 
   return (
     <div>
-      <Header />
       <h2>Contact</h2>
       <p>
         Whether you have questions about plant care, need help with your order,
@@ -93,7 +90,6 @@ export const ContactPage = () => {
           <p>Thank you for your message! We'll get back to you soon.</p>
         )}
       </form>
-      <Footer />
     </div>
   )
 }
