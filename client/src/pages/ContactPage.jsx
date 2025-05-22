@@ -1,6 +1,9 @@
 import emailjs from "@emailjs/browser"
 import { useState } from "react"
 import { Button } from "../components/Button"
+import plant1 from "../assets/contact-1.png"
+import plant2 from "../assets/contact-2.png"
+import plant3 from "../assets/contact-3.png"
 
 const SERVICE_ID = import.meta.env.VITE_EMAIL_SERVICE_ID
 const TEMPLATE_ID = import.meta.env.VITE_EMAIL_TEMPLATE_ID
@@ -51,6 +54,23 @@ export const ContactPage = () => {
         you.
       </p>
       <p>Fill in the form, and we'll get back to you as soon as we can.</p>
+      <div className="flex gap-4">
+        <img
+          className="w-[100px] h-[300px] object-cover"
+          src={plant1}
+          alt="Green plant with white background"
+        />
+        <img
+          className="w-[100px] h-[300px] object-cover"
+          src={plant2}
+          alt="Green plant with white background"
+        />
+        <img
+          className="w-[100px] h-[300px] object-cover"
+          src={plant3}
+          alt="Green plant with white background"
+        />
+      </div>
       <form>
         <label>
           Name
