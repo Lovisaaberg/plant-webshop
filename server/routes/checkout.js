@@ -22,11 +22,26 @@ router.post("/create-checkout-session", async (req, res) => {
     payment_method_types: ["card"],
     line_items: line_items,
     mode: "payment",
-    success_url: `http://localhost:5173/success`,
-    cancel_url: `http://localhost:5173/cancel`,
+    success_url: `http://localhost:5173/order?session_id={CHECKOUT_SESSION_ID}`,
+    cancel_url: `http://localhost:5173/order?session_id={CHECKOUT_SESSION_ID}`,
   });
 
   res.json({ id: session.id });
+});
+
+router.get("/checkout-session", async (req, res) => {
+  const session = await stripe.checkout.sessions.retrieve(req.query.sessionId, {
+    expand: ["line_items", "line_items.data.price.product"],
+  });
+
+  res.json({
+    status: session.status,
+    customer_email: session.customer_details?.email,
+    amount_total: session.amount_total,
+    currency: session.currency,
+    line_items: session.line_items?.data || [],
+    payment_status: session.payment_status,
+  });
 });
 
 module.exports = router;
