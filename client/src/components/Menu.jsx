@@ -10,10 +10,18 @@ export const Menu = ({ handleMenuClick }) => {
 
   return (
     <div>
-      <ul style={{ display: "flex", gap: "20px", justifyContent: "center" }}>
+      <ul className="flex flex-row gap-[60px] justify-center text-2xl">
         {menuLinks.map((link, index) => (
           <li key={`navlink-${index}`}>
-            <NavLink to={link.to} onClick={handleMenuClick}>
+            <NavLink
+              to={link.to}
+              onClick={handleMenuClick}
+              className={({ isActive }) =>
+                isActive
+                  ? "underline text-black inline-block"
+                  : "text-gray-600 hover:text-gray-900 hover:scale-105 transition-transform duration-180 inline-block"
+              }
+            >
               {link.label}
             </NavLink>
           </li>

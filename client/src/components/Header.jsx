@@ -6,17 +6,9 @@ export const Header = () => {
   const numberOfItems = appContentStore((state) => state.numberOfItems())
 
   return (
-    <div
-      style={{
-        display: "flex",
-        gap: "20px",
-        justifyContent: "center",
-        alignItems: "center",
-        padding: "20px",
-      }}
-    >
+    <div className="flex flex-row place-content-between items-center">
       <Link to="/">
-      <h1>LÖV</h1>
+        <div className="logo-font text-[64px]">LÖV.</div>
       </Link>
       <Menu />
       <Link to="/checkout">
