@@ -7,7 +7,7 @@ export const Menu = ({ handleMenuClick }) => {
   const menuLinks = [
     { label: "Plants", to: "/plants" },
     { label: "Plant care tips", to: "/plantcare" },
-    { label: "About Us", to: "/aboutus" },
+    { label: "About us", to: "/aboutus" },
     { label: "Contact", to: "/contact" },
   ]
 
@@ -41,7 +41,7 @@ export const Menu = ({ handleMenuClick }) => {
 
       {/* Menu for desktop */}
 
-      <ul className="hidden md:flex flex-row gap-[60px] justify-center text-2xl">
+      <ul className="hidden md:flex flex-row lg:gap-[60px] md:gap-[30px] justify-center text-2xl">
         {menuLinks.map((link, index) => (
           <li key={`navlink-${index}`}>
             <NavLink
