@@ -84,9 +84,11 @@ export const ContactPage = () => {
               name="name"
               required
               value={formData.name}
-              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, name: e.target.value })
+              }
               className="border border-gray-700"
-              />
+            />
           </label>
           <label className="flex flex-col gap-2">
             E-mail
@@ -99,7 +101,7 @@ export const ContactPage = () => {
                 setFormData({ ...formData, email: e.target.value })
               }
               className="border border-gray-700"
-              />
+            />
           </label>
         </div>
         <label className="flex flex-col gap-2">

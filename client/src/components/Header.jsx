@@ -6,27 +6,29 @@ export const Header = () => {
   const numberOfItems = appContentStore((state) => state.numberOfItems())
 
   return (
-    <div className="flex items-center justify-between w-full">
-      <Link to="/">
-        <div className="logo-font text-[64px]">LÖV.</div>
-      </Link>
-
-      {/* Desktop menu */}
-      <nav className="hidden md:flex">
-        <Menu />
-      </nav>
-
-      <div className="flex items-center gap-4 md:hidden order-last">
-        <Link to="/checkout" className="ml-4 flex items-center gap-2">
-          <p>{numberOfItems}</p>
-          <img src="icons/shopping-cart-empty.png" alt="Shopping cart" />
+    <header className="w-full">
+      <div className="max-w-[1280px] mx-auto flex items-center justify-between h-[106px] pt-[50px] px-[16px] pb-[20px]">
+        <Link to="/">
+          <div className="logo-font text-[64px]">LÖV.</div>
         </Link>
 
-        {/* Mobile menu */}
-        <div className="md:hidden order-last">
+        {/* Desktop menu */}
+        <nav className="hidden md:flex ">
           <Menu />
+        </nav>
+
+        <div className="flex items-center gap-4 order-last">
+          <Link to="/checkout" className="ml-4 flex items-center gap-2">
+            <p>{numberOfItems}</p>
+            <img src="icons/shopping-cart-empty.png" alt="Shopping cart" />
+          </Link>
+
+          {/* Mobile menu */}
+          <div className="md:hidden order-last">
+            <Menu />
+          </div>
         </div>
       </div>
-    </div>
+    </header>
   )
 }
