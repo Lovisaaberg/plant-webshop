@@ -58,7 +58,7 @@
       "price": 119,
       "stock": 20,
       "category": "Vines",
-      "image": "/images/golden-pothos.jpg"
+      "image": "/images/products/golden-pothos.png"
     },
     {
       "id": 6,
@@ -70,7 +70,7 @@
       "price": 179,
       "stock": 8,
       "category": "Aroids",
-      "image": "/images/monstera-adansonii.jpg"
+      "image": "/images/products/monstera-adansonii.png"
     },
     {
       "id": 7,
@@ -82,7 +82,7 @@
       "price": 109,
       "stock": 10,
       "category": "Vines",
-      "image": "/images/arrowhead-plant.jpg"
+      "image": "/images/products/arrowhead-plant.png"
     },
     {
       "id": 8,
@@ -94,7 +94,7 @@
       "price": 159,
       "stock": 9,
       "category": "Vines",
-      "image": "/images/cebu-blue.jpg"
+      "image": "/images/products/cebu-blue-pothos.png"
     },
     {
       "id": 9,
