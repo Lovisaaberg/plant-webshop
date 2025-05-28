@@ -10,8 +10,23 @@ export const ProductInfo = () => {
   const { id } = useParams()
   const product = products.find((product) => product.id === Number(id))
 
+  const cart = appContentStore((state) => state.cart)
+  const quantity = cart.find((item) => item.id === product.id)?.quantity || 0
   const { addToCart } = appContentStore()
-  // const { removeFromCart } = appContentStore()
+  const { changeQuantityInCart } = appContentStore()
+  const { removeFromCart } = appContentStore()
+
+  const changeQuantity = (event) => {
+    event.preventDefault()
+    const newQuantity = Number(event.target.value)
+    if (newQuantity >= 0 && newQuantity <= 100) {
+      if (newQuantity === 0) {
+        removeFromCart(product.id)
+      } else {
+        changeQuantityInCart(product, newQuantity)
+      }
+    }
+  }
 
   if (!product) {
     return <div>Product not found</div>
@@ -23,9 +38,9 @@ export const ProductInfo = () => {
         <div className="col-start-2 w-3xs">
           <h2 className="text-[28px] lg:text-4xl font-semibold flex justify-between">
             {product.name}
-            <img src={Heart} alt="Add to favorites" className="h-[40px]" />
+            <img src={Heart} alt="Add to favorites" className="h-[40px] mt-1" />
           </h2>
-          <p className="font-roboto font-light italic text-xl">
+          <p className="font-roboto font-light italic text-xl -mt-1">
             {product.latin_name}
           </p>
         </div>
@@ -34,19 +49,38 @@ export const ProductInfo = () => {
           alt={product.name}
           className="w-3xs h-[350px] object-cover lg:w-md lg:h-[500px] col-start-1 row-start-1 row-span-2"
         />
-        <div className="flex col-start-2 w-3xs">
+        <div className="flex col-start-2 w-3xs items-center gap-2">
           <img
             src={Light}
             alt="Icon for light preference"
             className="h-[40px]"
           />
-          <p>Light: <br/> {product.light}</p>
+          <p className="text-base">
+            Light: <br /> {product.light}
+          </p>
         </div>
-        <div className="flex col-start-2 w-3xs">
+        <div className="flex col-start-2 w-3xs items-center gap-2">
           <img src={Water} alt="Icon for water needs" className="h-[40px]" />
+          <p className="text-base">
+            Water: <br /> {product.water}
+          </p>
         </div>
-        <div className="col-start-2 w-3xs order-1 lg:order-0">
-          <p>{product.price}</p>
+        <div className="w-3xs col-start-2 order-1 lg:order-0">
+          <div className="flex justify-between gap-2">
+            <p className="text-2xl font-semibold">{product.price} kr</p>
+            <label className="flex items-center gap-2">
+              <p className="text-lg">Quantity:</p>
+              <input
+                type="number"
+                name="quantity"
+                min="0"
+                max="100"
+                value={quantity}
+                onChange={(event) => changeQuantity(event)}
+                className="w-[80px] h-[40px] border border-gray-300 text-center"
+              ></input>
+            </label>
+          </div>
           <Button
             text="Add to Cart"
             func={() => addToCart(product)}
@@ -60,7 +94,10 @@ export const ProductInfo = () => {
             mt-[24px]"
           />
         </div>
-        <p className="w-3xs">{product.description}</p>
+        <div className="w-3xs flex flex-col gap-1 mt-1">
+          <h3 className="text-2xl font-bold">Plant description</h3>
+          <p className="text-lg font-light">{product.description}</p>
+        </div>
       </div>
     </div>
   )
