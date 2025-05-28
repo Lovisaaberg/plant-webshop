@@ -7,9 +7,9 @@ export const ProductsSection = () => {
   return (
     <div>
       Our products
-      <div style={{ display: "flex", gap: "20px", justifyContent: "center" }}>
+      <div className="grid grid-cols-2 gap-6">
         {firstProducts.map((product) => (
-          <ProductCard product={product} key={product.id}/>
+          <ProductCard product={product} key={product.id} />
         ))}
       </div>
     </div>

@@ -5,7 +5,7 @@ export const Menu = ({ handleMenuClick }) => {
   const [menuOpen, setMenuOpen] = useState(false)
 
   const menuLinks = [
-    { label: "Plants", to: "/plants" },
+    { label: "Plants", to: "/products" },
     { label: "Plant care tips", to: "/plantcare" },
     { label: "About us", to: "/aboutus" },
     { label: "Contact", to: "/contact" },

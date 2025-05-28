@@ -121,6 +121,8 @@ export const HeroSection = () => {
           text-white 
           rounded-[10px] 
           shadow-md 
+          hover:bg-[#AE8000]
+          cursor-pointer
           mt-[40px]"
         />
       </div>
