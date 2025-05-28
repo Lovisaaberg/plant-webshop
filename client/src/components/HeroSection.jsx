@@ -13,14 +13,21 @@ export const HeroSection = () => {
       <img
         src="/src/assets/hero-picture.png"
         alt="Hero image"
-        className="w-full object-cover"
+        className="
+        w-full
+        h-[400px] 
+        sm:h-full 
+        max-h-[600px] 
+        object-cover
+        object-[90%_top]
+        md:object-center"
       />
 
       {/* Mobile view */}
       <div
         className="
           absolute 
-          top-[180px] 
+          top-[240px] 
           left-1/2 
           transform 
           -translate-x-1/2
@@ -31,7 +38,7 @@ export const HeroSection = () => {
           flex 
           flex-col 
           items-center
-          md:hidden
+          sm:hidden
         "
       >
         <h1
@@ -71,11 +78,11 @@ export const HeroSection = () => {
       <div
         className="
           hidden 
-          md:flex 
+          sm:flex 
           flex-col 
           items-start
           absolute 
-          top-[100px] 
+          top-[80px] 
           left-[60px] 
           max-w-[590px]
           p-0
@@ -84,7 +91,8 @@ export const HeroSection = () => {
       >
         <h1
           className="
-        text-[80px] 
+        sm:text-[60px]
+        lg:text-[80px] 
         font-medium 
         leading-tight"
         >
@@ -94,7 +102,8 @@ export const HeroSection = () => {
           className="
         mt-[24px] 
         max-w-[440px] 
-        text-[24px]"
+        sm:text-[20px]
+        md:text-[24px]"
         >
           Carefully selected plants for every corner of your home. Easy to care
           for. Beautiful to live with. Delivered to your door.
