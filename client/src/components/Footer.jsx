@@ -10,16 +10,15 @@ export const Footer = () => {
         <ul>
           <li>
             <Link to="/plants">Plants</Link>
-
-            <li>
-              <Link to="/plantcare">Plant care tips</Link>
-            </li>
-            <li>
-              <Link to="/aboutus">About us</Link>
-            </li>
-            <li>
-              <Link to="/contact">Contact</Link>
-            </li>
+          </li>
+          <li>
+            <Link to="/plantcare">Plant care tips</Link>
+          </li>
+          <li>
+            <Link to="/aboutus">About us</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact</Link>
           </li>
         </ul>
       </div>
