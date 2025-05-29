@@ -58,7 +58,7 @@
       "price": 119,
       "stock": 20,
       "category": "Vines",
-      "image": "/images/golden-pothos.jpg"
+      "image": "/images/products/golden-pothos.png"
     },
     {
       "id": 6,
@@ -70,7 +70,7 @@
       "price": 179,
       "stock": 8,
       "category": "Aroids",
-      "image": "/images/monstera-adansonii.jpg"
+      "image": "/images/products/monstera-adansonii.png"
     },
     {
       "id": 7,
@@ -82,7 +82,7 @@
       "price": 109,
       "stock": 10,
       "category": "Vines",
-      "image": "/images/arrowhead-plant.jpg"
+      "image": "/images/products/arrowhead-plant.png"
     },
     {
       "id": 8,
@@ -94,7 +94,7 @@
       "price": 159,
       "stock": 9,
       "category": "Vines",
-      "image": "/images/cebu-blue.jpg"
+      "image": "/images/products/cebu-blue.png"
     },
     {
       "id": 9,
@@ -106,7 +106,7 @@
       "price": 129,
       "stock": 18,
       "category": "Tropical",
-      "image": "/images/pilea.jpg"
+      "image": "/images/products/pilea.png"
     },
     {
       "id": 10,
@@ -118,7 +118,7 @@
       "price": 139,
       "stock": 5,
       "category": "Bulbs",
-      "image": "/images/barbados-lily.jpg"
+      "image": "/images/products/barbados-lily.png"
     },
     {
       "id": 11,
@@ -130,7 +130,7 @@
       "price": 169,
       "stock": 7,
       "category": "Aroids",
-      "image": "/images/philodendron-birkin.jpg"
+      "image": "/images/products/philodendron-birkin.png"
     },
     {
       "id": 12,
@@ -142,7 +142,7 @@
       "price": 159,
       "stock": 6,
       "category": "Calatheas",
-      "image": "/images/rattlesnake-plant.jpg"
+      "image": "/images/products/rattlesnake-plant.png"
     },
     {
       "id": 13,
@@ -154,7 +154,7 @@
       "price": 179,
       "stock": 14,
       "category": "Ficus",
-      "image": "/images/rubber-fig.jpg"
+      "image": "/images/products/rubber-fig.png"
     },
     {
       "id": 14,
@@ -166,7 +166,7 @@
       "price": 149,
       "stock": 10,
       "category": "Aroids",
-      "image": "/images/mini-monstera.jpg"
+      "image": "/images/products/mini-monstera.png"
     },
     {
       "id": 15,
@@ -178,7 +178,7 @@
       "price": 119,
       "stock": 11,
       "category": "Tropical",
-      "image": "/images/schefflera.jpg"
+      "image": "/images/products/schefflera.png"
     },
     {
       "id": 16,
@@ -190,7 +190,7 @@
       "price": 189,
       "stock": 12,
       "category": "Aroids",
-      "image": "/images/monstera-deliciosa.jpg"
+      "image": "/images/products/monstera-deliciosa.png"
     },
     {
       "id": 17,
@@ -202,7 +202,7 @@
       "price": 119,
       "stock": 13,
       "category": "Succulents",
-      "image": "/images/sansevieria.jpg"
+      "image": "/images/products/sansevieria.png"
     },
     {
       "id": 18,
@@ -214,7 +214,7 @@
       "price": 169,
       "stock": 9,
       "category": "Aroids",
-      "image": "/images/monstera-borsigiana.jpg"
+      "image": "/images/products/monstera-borsigiana.png"
     },
     {
       "id": 19,
@@ -226,7 +226,7 @@
       "price": 229,
       "stock": 7,
       "category": "Ficus",
-      "image": "/images/fiddle-leaf.jpg"
+      "image": "/images/products/fiddle-leaf.png"
     },
     {
       "id": 20,
@@ -238,7 +238,7 @@
       "price": 99,
       "stock": 15,
       "category": "Aroids",
-      "image": "/images/heartleaf-philodendron.jpg"
+      "image": "/images/products/heartleaf-philodendron.png"
     },
     {
       "id": 21,
@@ -250,7 +250,7 @@
       "price": 89,
       "stock": 18,
       "category": "Succulents",
-      "image": "/images/aloe-vera.jpg"
+      "image": "/images/products/aloe-vera.png"
     },
     {
       "id": 22,
@@ -262,7 +262,7 @@
       "price": 139,
       "stock": 10,
       "category": "Tropical",
-      "image": "/images/dracaena-fragrans.jpg"
+      "image": "/images/products/dracaena-fragrans.png"
     },
     {
       "id": 23,
@@ -274,7 +274,7 @@
       "price": 149,
       "stock": 14,
       "category": "Vines",
-      "image": "/images/silver-satin.jpg"
+      "image": "/images/products/silver-satin.png"
     },
     {
       "id": 24,
@@ -286,7 +286,7 @@
       "price": 109,
       "stock": 13,
       "category": "Succulents",
-      "image": "/images/jade-plant.jpg"
+      "image": "/images/products/jade-plant.png"
     },
     {
       "id": 25,
@@ -298,7 +298,7 @@
       "price": 239,
       "stock": 5,
       "category": "Tropical",
-      "image": "/images/strelitzia.jpg"
+      "image": "/images/products/strelitzia.png"
     },
     {
       "id": 26,
@@ -310,7 +310,7 @@
       "price": 139,
       "stock": 11,
       "category": "Tropical",
-      "image": "/images/zz-plant.jpg"
+      "image": "/images/products/zz-plant.png"
     },
     {
       "id": 27,
@@ -322,7 +322,7 @@
       "price": 149,
       "stock": 7,
       "category": "Tropical",
-      "image": "/images/false-aralia.jpg"
+      "image": "/images/products/false-aralia.png"
     },
     {
       "id": 28,
@@ -334,7 +334,7 @@
       "price": 229,
       "stock": 6,
       "category": "Aroids",
-      "image": "/images/philodendron-gloriosum.jpg"
+      "image": "/images/products/philodendron-gloriosum.png"
     }
   ]
 }
