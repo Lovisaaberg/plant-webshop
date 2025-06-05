@@ -37,27 +37,60 @@ export const ProductCard = ({ product }) => {
           >
             {product.name}
           </p>
-          <p className="text-left text-[20px]">{product.price} kr</p>
         </div>
       </Link>
 
-      <div className="flex ml-auto mb-[60px]">
-        <Button>
-          <img
-            src="/icons/heart-mobile-menu.png"
-            alt="Add to favorites"
-            className="w-[30px] h-[30px] cursor-pointer"
-          />
-        </Button>
+      <div
+        className="
+      lg:flex 
+      lg:justify-between
+      "
+      >
+        <p
+          className="
+        text-left 
+        text-[20px]
+        lg:text-[24px]"
+        >
+          {product.price} kr
+        </p>
 
-        <Button func={() => addToCart(product)}>
-          <img
-            src="/icons/shopping-cart-plus.png"
-            alt="Add to shopping cart"
-            className="w-[30px] h-[30px] ml-[6px] cursor-pointer"
-          />
-        </Button>
-        <Link to={`product/${product.id}`}></Link>
+        <div
+          className="
+        flex 
+        mb-[60px]
+        mt-[16px]
+        lg:mt-0"
+        >
+          <Button>
+            <img
+              src="/icons/heart-mobile-menu.png"
+              alt="Add to favorites"
+              className="
+              w-[30px] 
+              h-[30px] 
+              lg:w-[36px] 
+              lg:h-[36px] 
+              cursor-pointer
+              "
+            />
+          </Button>
+
+          <Button func={() => addToCart(product)}>
+            <img
+              src="/icons/shopping-cart-plus.png"
+              alt="Add to shopping cart"
+              className="
+              w-[30px] 
+              h-[30px] 
+              lg:w-[36px] 
+              lg:h-[36px] 
+              ml-[8px] 
+              cursor-pointer"
+            />
+          </Button>
+          <Link to={`product/${product.id}`}></Link>
+        </div>
       </div>
     </div>
   )
