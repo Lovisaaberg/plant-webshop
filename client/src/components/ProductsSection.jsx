@@ -18,8 +18,8 @@ export const ProductsSection = () => {
       gap-[60px_40px]
       md:grid-cols-3
       md:max-w-[860px]
-      lg:grid-cols-4
-      lg:max-w-[1160px]
+      xl:grid-cols-4
+      xl:max-w-[1160px]
       "
       >
         {firstProducts.map((product) => (
