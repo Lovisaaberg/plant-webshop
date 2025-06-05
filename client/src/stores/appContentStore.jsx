@@ -51,7 +51,7 @@ export const appContentStore = create((set, get) => ({
         }
       } else {
         return {
-          cart: [...state.cart, { ...item, quantity: 1 }],
+          cart: [...state.cart, { ...item, quantity: newQuantity }],
         }
       }
     })

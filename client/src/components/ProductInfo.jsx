@@ -33,72 +33,81 @@ export const ProductInfo = () => {
   }
 
   return (
-    <div className="flex flex-col gap-4 p-4 text-left">
-      <div className="flex flex-col lg:grid grid-cols-2 grid-rows-1 gap-4 items-center justify-center">
-        <div className="col-start-2 w-3xs">
-          <h2 className="text-[28px] lg:text-4xl font-semibold flex justify-between">
-            {product.name}
-            <img src={Heart} alt="Add to favorites" className="h-[40px] mt-1" />
-          </h2>
-          <p className="font-roboto font-light italic text-xl -mt-1">
-            {product.latin_name}
-          </p>
-        </div>
-        <img
-          src={product.image}
-          alt={product.name}
-          className="w-3xs h-[350px] object-cover lg:w-md lg:h-[500px] col-start-1 row-start-1 row-span-2"
+    <div className="flex flex-col md:grid grid-cols-2 grid-costume-rows gap-4 lg:gap-7 items-center justify-center md:items-start p-4 text-left md:w-150 lg:w-220 mx-auto">
+      <div className="col-start-2 w-3xs h-20 md:w-65 lg:w-100">
+        <h2 className="text-[28px] lg:text-4xl font-semibold flex justify-between">
+          {product.name}
+          <img src={Heart} alt="Add to favorites" className="h-[40px] mt-1" />
+        </h2>
+        <p className="font-roboto font-light italic text-xl -mt-1">
+          {product.latin_name}
+        </p>
+      </div>
+      <img
+        src={product.image}
+        alt={product.name}
+        className="w-3xs h-[350px] object-cover lg:w-md lg:h-[500px] col-start-1 row-start-1 row-span-4"
+      />
+      <div className="flex col-start-2 w-3xs lg:w-100 items-center gap-2">
+        <img src={Light} alt="Icon for light preference" className="h-[40px]" />
+        <p className="text-base">
+          Light: <br /> {product.light}
+        </p>
+      </div>
+      <div className="flex col-start-2 w-3xs lg:w-100 items-center gap-2">
+        <img src={Water} alt="Icon for water needs" className="h-[40px]" />
+        <p className="text-base">
+          Water: <br /> {product.water}
+        </p>
+      </div>
+      <div className="w-3xs md:w-65 lg:w-100 mb-3 md:mb-0 grid grid-cols-2 grid-rows-2 md:gap-3 md:self-end col-start-2 order-1 md:order-0">
+        <p className="text-2xl lg:text-3xl font-semibold col-start-1 md:col-start-2 self-center justifify-self-start md:self-end md:justify-self-end">
+          {product.price} kr
+        </p>
+        <label className="flex items-center gap-2 md:row-start-2 md:justify-self-end md:items-end">
+          <p className="text-lg">Quantity:</p>
+          <select
+            value={quantity}
+            onChange={(event) => changeQuantity(event)}
+            className="w-15 md:w-10 lg:w-15 h-10 border border-gray-400 text-center"
+          >
+            {[...Array(11).keys()].map((num) => (
+              <option key={num} value={num}>
+                {num}
+              </option>
+            ))}
+          </select>
+        </label>
+        <Button
+          text="Add to Cart"
+          func={() => addToCart(product)}
+          className="
+          w-3xs
+          md:w-30
+          lg:w-45
+          h-[40px] 
+          bg-[#2C7E62] 
+          text-white 
+          rounded-[10px] 
+          shadow-md 
+          mt-[24px]
+          self-center
+          hover:bg-[#00583A]
+          font-quicksand
+          md:col-start-2
+          row-start-2
+          lg:justify-self-end
+          lg:self-end
+          "
         />
-        <div className="flex col-start-2 w-3xs items-center gap-2">
-          <img
-            src={Light}
-            alt="Icon for light preference"
-            className="h-[40px]"
-          />
-          <p className="text-base">
-            Light: <br /> {product.light}
-          </p>
-        </div>
-        <div className="flex col-start-2 w-3xs items-center gap-2">
-          <img src={Water} alt="Icon for water needs" className="h-[40px]" />
-          <p className="text-base">
-            Water: <br /> {product.water}
-          </p>
-        </div>
-        <div className="w-3xs col-start-2 order-1 lg:order-0">
-          <div className="flex justify-between gap-2">
-            <p className="text-2xl font-semibold">{product.price} kr</p>
-            <label className="flex items-center gap-2">
-              <p className="text-lg">Quantity:</p>
-              <input
-                type="number"
-                name="quantity"
-                min="0"
-                max="100"
-                value={quantity}
-                onChange={(event) => changeQuantity(event)}
-                className="w-[80px] h-[40px] border border-gray-300 text-center"
-              ></input>
-            </label>
-          </div>
-          <Button
-            text="Add to Cart"
-            func={() => addToCart(product)}
-            className="
-            w-[180px] 
-            h-[40px] 
-            bg-[#D79E00] 
-            text-white 
-            rounded-[10px] 
-            shadow-md 
-            mt-[24px]"
-          />
-        </div>
-        <div className="w-3xs flex flex-col gap-1 mt-1">
-          <h3 className="text-2xl font-bold">Plant description</h3>
-          <p className="text-lg font-light">{product.description}</p>
-        </div>
+      </div>
+      <div className="w-3xs md:w-135 lg:w-215 flex flex-col gap-1 mt-1 col-span-2">
+        <h3 className="text-2xl font-bold">Plant description</h3>
+        <p className="text-lg font-light">{product.description}</p>
       </div>
     </div>
   )
 }
+
+
+//<div className="flex justify-between gap-2 mt-8">

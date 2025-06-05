@@ -28,6 +28,20 @@ body {
   font-weight: 300;
 }
 
+.font-quicksand {
+  font-family: "Quicksand", sans-serif;
+  font-weight: 600;
+}
+
+.grid-costume-rows {
+  grid-template-rows: 80px 50px 50px 4fr 2fr;
+}
+
+@media (max-width: 1024px) {
+  .grid-costume-rows {
+    grid-template-rows: 60px 50px 50px 150px 1fr;
+  }
+}
 
 @media (prefers-color-scheme: light) {
   :root {
