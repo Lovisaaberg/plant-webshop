@@ -7,7 +7,7 @@ export const Header = () => {
 
   return (
     <header className="w-full">
-      <div className="max-w-[1280px] mx-auto flex items-center justify-between h-[106px] pt-[50px] px-[16px] pb-[20px]">
+      <div className="mx-auto flex items-center justify-between h-[106px] pt-[50px] px-[16px] pb-[20px]">
         <Link to="/">
           <div className="logo-font text-[64px] font-extralight">LÖV.</div>
         </Link>
