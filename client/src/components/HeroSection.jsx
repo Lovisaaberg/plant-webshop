@@ -5,7 +5,7 @@ export const HeroSection = () => {
   const navigate = useNavigate()
 
   const handleNavigate = () => {
-    navigate("/product")
+    navigate("/products")
   }
 
   return (
@@ -61,6 +61,7 @@ export const HeroSection = () => {
           Carefully selected plants for every corner of your home. Easy to care
           for. Beautiful to live with. Delivered to your door.
         </p>
+
         <Button
           text="Shop plants"
           func={handleNavigate}

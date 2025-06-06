@@ -10,11 +10,15 @@ export const ProductCard = ({ product }) => {
       className="
     flex 
     flex-col 
+    mx-auto
     w-[120px]
-    md:w-[225px]
+    md:w-[200px]
     lg:w-[260px]"
     >
-      <Link to={`product/${product.id}`} className="flex flex-col items-start">
+      <Link
+        to={`/product/${product.id}`}
+        className="flex flex-col items-start hover:underline"
+      >
         <img
           src={product.image}
           alt="Product Image"
@@ -22,18 +26,27 @@ export const ProductCard = ({ product }) => {
           w-[120px] 
           h-[180px] 
           object-cover
-          md:w-[225px] 
+          md:w-[218px] 
           md:h-[300px]
           lg:w-[260px] 
           lg:h-[350px]"
         />
-        <div className="h-[120px] flex flex-col justify-between mt-[12px] mb-[16px]">
+        <div
+          className="
+        h-[60px] 
+        flex 
+        flex-col 
+        justify-between 
+        mt-[12px] 
+        mb-[16px]"
+        >
           <p
             className="
           text-left 
           font-semibold 
           text-[18px]
-          md:text-[24px]"
+          md:text-[20px]
+          break-words"
           >
             {product.name}
           </p>
@@ -49,8 +62,8 @@ export const ProductCard = ({ product }) => {
         <p
           className="
         text-left 
-        text-[20px]
-        lg:text-[24px]"
+        text-[18px]
+        lg:text-[20px]"
         >
           {product.price} kr
         </p>
@@ -69,8 +82,8 @@ export const ProductCard = ({ product }) => {
               className="
               w-[30px] 
               h-[30px] 
-              lg:w-[36px] 
-              lg:h-[36px] 
+              lg:w-[30px] 
+              lg:h-[30px] 
               cursor-pointer
               "
             />
@@ -83,13 +96,12 @@ export const ProductCard = ({ product }) => {
               className="
               w-[30px] 
               h-[30px] 
-              lg:w-[36px] 
-              lg:h-[36px] 
+              lg:w-[30px] 
+              lg:h-[30px] 
               ml-[8px] 
               cursor-pointer"
             />
           </Button>
-          <Link to={`product/${product.id}`}></Link>
         </div>
       </div>
     </div>

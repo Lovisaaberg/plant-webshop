@@ -21,7 +21,12 @@ export const Menu = ({ handleMenuClick }) => {
     <nav className="relative">
       <button
         onClick={toggleMenu}
-        className="md:hidden focus:outline-none bg-transparent border-none p-0"
+        className="
+        md:hidden 
+        focus:outline-none 
+        bg-transparent 
+        border-none 
+        p-0"
         aria-label={menuOpen ? "Close menu" : "Open menu"}
       >
         {menuOpen ? (
@@ -41,7 +46,14 @@ export const Menu = ({ handleMenuClick }) => {
 
       {/* Menu for desktop */}
 
-      <ul className="hidden md:flex flex-row lg:gap-[60px] md:gap-[30px] justify-center text-2xl">
+      <ul className="
+      hidden 
+      md:flex 
+      flex-row 
+      lg:gap-[60px] 
+      md:gap-[30px] 
+      justify-center 
+      text-2xl">
         {menuLinks.map((link, index) => (
           <li key={`navlink-${index}`}>
             <NavLink
