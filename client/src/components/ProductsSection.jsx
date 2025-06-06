@@ -1,29 +1,35 @@
 import { ProductCard } from "./ProductCard"
 import { products } from "../productData"
+import { Link } from "react-router-dom"
 
 const firstProducts = products
 
 export const ProductsSection = () => {
   return (
-    <section className="mt-[68px] ml-[40px] mr-[40px]">
+    <section
+      className="
+    mt-[68px]
+    md:px-[20px]"
+    >
       <h2 className="text-[28px] md:text-[40px] font-semibold mb-[30px]">
         Our Plants
       </h2>
 
       <div
         className="
-      grid grid-cols-2 
-      mx-auto 
-      max-w-[260px] 
-      gap-[60px_40px]
-      md:grid-cols-3
-      md:max-w-[860px]
-      xl:grid-cols-4
-      xl:max-w-[1160px]
-      "
+    grid 
+    grid-cols-2 
+    md:grid-cols-3 
+    xl:grid-cols-4 
+    md:gap-[40px_40px]
+    mx-auto
+    max-w-[1260px]
+    px-[30px]"
       >
         {firstProducts.map((product) => (
-          <ProductCard product={product} key={product.id} />
+          <Link to={`/product/${product.id}`} key={product.id}>
+            <ProductCard product={product} />
+          </Link>
         ))}
       </div>
     </section>
