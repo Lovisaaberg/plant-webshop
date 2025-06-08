@@ -19,18 +19,19 @@ export const appContentStore = create((set, get) => ({
     }
   },
 
-  addToCart: (item) =>
+  addToCart: (item, numberOfItems) =>
     set((state) => {
       const existingItem = state.cart.find((i) => i.id === item.id);
+      const itemsIncrease = numberOfItems || 1;
       if (existingItem) {
         return {
           cart: state.cart.map((i) =>
-            i.id === item.id ? { ...i, quantity: i.quantity + 1 } : i
+            i.id === item.id ? { ...i, quantity: i.quantity + itemsIncrease} : i
           ),
         }
       } else {
         return {
-          cart: [...state.cart, { ...item, quantity: 1 }],
+          cart: [...state.cart, { ...item, quantity: itemsIncrease }],
         }
       }
     }),

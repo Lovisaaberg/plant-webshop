@@ -34,12 +34,12 @@ body {
 }
 
 .grid-costume-rows {
-  grid-template-rows: 80px 50px 50px 4fr 2fr;
+  grid-template-rows: 1fr 1fr 2fr 2fr;
 }
 
 @media (max-width: 1024px) {
   .grid-costume-rows {
-    grid-template-rows: 60px 50px 50px 150px 1fr;
+    grid-template-rows: 1fr 1fr 1fr 2fr;
   }
 }
 
