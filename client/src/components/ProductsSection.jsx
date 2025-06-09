@@ -1,10 +1,28 @@
 import { ProductCard } from "./ProductCard"
-import { products } from "../productData"
-import { Link } from "react-router-dom"
-
-const firstProducts = products
+import { supabase } from "../supabase"
+import { useEffect, useState } from "react"
 
 export const ProductsSection = () => {
+  const [plants, setPlants] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
+
+  useEffect(() => {
+    const fetchPlants = async () => {
+      const { data, error } = await supabase.from("plants").select("*")
+      if (error) {
+        setError(error.message)
+      } else {
+        setPlants(data)
+      }
+      setLoading(false)
+    }
+    fetchPlants()
+  }, [])
+
+  if (loading) return <p>Loading plants...</p>
+  if (error) return <p>Error loading plants {error}</p>
+
   return (
     <section
       className="
@@ -26,10 +44,8 @@ export const ProductsSection = () => {
     max-w-[1260px]
     px-[30px]"
       >
-        {firstProducts.map((product) => (
-          <Link to={`/product/${product.id}`} key={product.id}>
-            <ProductCard product={product} />
-          </Link>
+        {plants.map((product) => (
+          <ProductCard key={product.id} product={product} />
         ))}
       </div>
     </section>

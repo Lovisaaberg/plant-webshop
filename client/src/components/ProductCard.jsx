@@ -3,6 +3,10 @@ import { appContentStore } from "../stores/appContentStore"
 import { Button } from "./Button"
 
 export const ProductCard = ({ product }) => {
+  if (!product) {
+    return null
+  }
+
   const { addToCart } = appContentStore()
 
   return (
