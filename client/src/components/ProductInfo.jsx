@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom"
-import { useState } from "react"
-import { products } from "../productData"
+import { useEffect, useState } from "react"
+import { supabase } from "../supabase"
 import { appContentStore } from "../stores/appContentStore"
 import { Button } from "../components/Button"
 import Heart from "/icons/heart-mobile-menu.png"
@@ -9,7 +9,31 @@ import Water from "/icons/water-icon.png"
 
 export const ProductInfo = () => {
   const { id } = useParams()
-  const product = products.find((product) => product.id === Number(id))
+  const [product, setProduct] = useState(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
+
+  useEffect(() => {
+    const fetchProduct = async () => {
+      const { data, error } = await supabase
+        .from("plants")
+        .select("*")
+        .eq("id", id)
+        .single()
+
+      if (error) {
+        setError(error.message)
+      } else {
+        setProduct(data)
+      }
+      setLoading(false)
+    }
+    fetchProduct()
+  }, [id])
+
+  if (loading) return <p>Loading product...</p>
+  if (error) return <p>Error loading product: {error}</p>
+  if (!product) return <p>Product not found</p>
 
   const cart = appContentStore((state) => state.cart)
   const numberOfItems = cart.find((item) => item.id === product.id)?.quantity || 0
@@ -24,9 +48,6 @@ export const ProductInfo = () => {
     }
   }
 
-  if (!product) {
-    return <div>Product not found</div>
-  }
 
   return (
     <div className="container flex flex-col md:grid grid-cols-2 grid-costume-rows gap-4 lg:gap-7 items-center justify-center md:items-start p-4 text-left md:w-150 lg:w-220 mx-auto">
@@ -106,6 +127,5 @@ export const ProductInfo = () => {
     </div>
   )
 }
-
 
 //<div className="flex justify-between gap-2 mt-8">
