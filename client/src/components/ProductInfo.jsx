@@ -12,6 +12,14 @@ export const ProductInfo = () => {
   const [product, setProduct] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+  const [quantity, setQuantity] = useState(0)
+
+  //Zuztand hooks
+  const cart = appContentStore((state) => state.cart)
+  const addToCart = appContentStore((state) => state.addToCart)
+  const changeQuantityInCart = appContentStore(
+    (state) => state.changeQuantityInCart
+  )
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -35,19 +43,13 @@ export const ProductInfo = () => {
   if (error) return <p>Error loading product: {error}</p>
   if (!product) return <p>Product not found</p>
 
-  const cart = appContentStore((state) => state.cart)
-  const numberOfItems = cart.find((item) => item.id === product.id)?.quantity || 0
-  const [quantity, setQuantity] = useState(numberOfItems)
-  const { addToCart } = appContentStore()
-
   const changeQuantity = (event) => {
-    event.preventDefault()
     const newQuantity = Number(event.target.value)
-    if (newQuantity > 0) {
-      setQuantity(newQuantity)
+    setQuantity(newQuantity)
+    if (product) {
+      changeQuantityInCart(product, newQuantity)
     }
   }
-
 
   return (
     <div className="container flex flex-col md:grid grid-cols-2 grid-costume-rows gap-4 lg:gap-7 items-center justify-center md:items-start p-4 text-left md:w-150 lg:w-220 mx-auto">
@@ -67,7 +69,11 @@ export const ProductInfo = () => {
       />
       <div className="flex flex-col col-start-2 w-3xs lg:w-100 gap-2">
         <div className="flex items-center gap-2">
-          <img src={Light} alt="Icon for light preference" className="h-[40px]" />
+          <img
+            src={Light}
+            alt="Icon for light preference"
+            className="h-[40px]"
+          />
           <p className="text-base">
             Light: <br /> {product.light}
           </p>
@@ -83,9 +89,13 @@ export const ProductInfo = () => {
         <p className="text-2xl lg:text-3xl font-semibold col-start-1 md:col-start-2 self-center justifify-self-start md:self-end md:justify-self-end">
           {product.price} kr
         </p>
-        <label className="flex items-center gap-2 md:row-start-2 md:justify-self-end md:items-end">
+        <label
+          htmlFor="quantity-select"
+          className="flex items-center gap-2 md:row-start-2 md:justify-self-end md:items-end"
+        >
           <p className="text-lg">Quantity:</p>
           <select
+            id="quantity-select"
             value={quantity}
             onChange={(event) => changeQuantity(event)}
             className="w-15 md:w-10 lg:w-15 h-10 border border-gray-400 text-center"
@@ -99,7 +109,13 @@ export const ProductInfo = () => {
         </label>
         <Button
           text="Add to Cart"
-          func={() => addToCart(product, quantity)}
+          func={() => {
+            if (quantity > 0) {
+              addToCart(product, quantity)
+              setQuantity(0)
+            }
+          }}
+          disabled={quantity === 0}
           className="
           w-3xs
           md:w-30
