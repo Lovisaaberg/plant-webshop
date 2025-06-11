@@ -20,7 +20,7 @@ export const Header = () => {
         <div className="flex items-center gap-4 order-last">
           <Link to="/checkout" className="ml-4 flex items-center gap-2">
             <p>{numberOfItems}</p>
-            <img src="icons/shopping-cart-empty.png" alt="Shopping cart" />
+            <img src="/icons/shopping-cart-empty.png" alt="Shopping cart" />
           </Link>
 
           {/* Mobile menu */}

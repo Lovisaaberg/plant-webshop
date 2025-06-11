@@ -15,11 +15,7 @@ export const ProductInfo = () => {
   const [quantity, setQuantity] = useState(0)
 
   //Zuztand hooks
-  const cart = appContentStore((state) => state.cart)
   const addToCart = appContentStore((state) => state.addToCart)
-  const changeQuantityInCart = appContentStore(
-    (state) => state.changeQuantityInCart
-  )
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -46,9 +42,6 @@ export const ProductInfo = () => {
   const changeQuantity = (event) => {
     const newQuantity = Number(event.target.value)
     setQuantity(newQuantity)
-    if (product) {
-      changeQuantityInCart(product, newQuantity)
-    }
   }
 
   return (
@@ -117,22 +110,24 @@ export const ProductInfo = () => {
           }}
           disabled={quantity === 0}
           className="
-          w-3xs
-          md:w-30
-          lg:w-45
-          h-[40px] 
-          bg-[#2C7E62] 
-          text-white 
-          rounded-[10px] 
-          shadow-md 
-          mt-[24px]
-          self-center
-          hover:bg-[#00583A]
-          font-quicksand
-          md:col-start-2
-          row-start-2
-          lg:justify-self-end
-          lg:self-end
+         w-3xs
+    md:w-30
+    lg:w-45
+    h-[40px] 
+    bg-[#2C7E62] 
+    text-white 
+    rounded-[10px] 
+    shadow-md 
+    mt-[24px]
+    self-center
+    hover:bg-[#00583A]
+    disabled:bg-gray-400
+    disabled:cursor-not-allowed
+    font-quicksand
+    md:col-start-2
+    row-start-2
+    lg:justify-self-end
+    lg:self-end
           "
         />
       </div>
