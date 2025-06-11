@@ -46,10 +46,10 @@ export const ContactPage = () => {
   }
 
   return (
-    <div className="flex flex-col gap-8 items-center justify-center p-4">
-      <div className="max-w-xs lg:max-w-3xl mx-auto flex flex-col gap-4 items-center justify-center">
-        <h2 className="text-3xl">Contact</h2>
-        <p className="text-base">
+    <div className="container flex flex-col items-center justify-center gap-4 lg:gap-7 p-4 md:w-150 lg:w-230 mx-auto">
+      <div className="w-3xs md:w-100 lg:w-140 flex flex-col items-center justify-center gap-2 md:gap-0">
+        <h2 className="text-3xl mb-2 md:mb-5">Contact</h2>
+        <p className="text-base whitespace-normal">
           Whether you have questions about plant care, need help with your
           order, or just want to know more about our products - we'd love to
           hear from you.
@@ -58,9 +58,9 @@ export const ContactPage = () => {
           Fill in the form, and we'll get back to you as soon as we can.
         </p>
       </div>
-      <div className="container mx-auto flex gap-4">
+      <div className="flex gap-1 lg:gap-4 w-78 md:w-150 lg:w-230 justify-center items-center">
         <img
-          className="max-w-1/3 h-[300px] object-cover"
+          className="max-w-1/3 h-75 object-cover"
           src={plant1}
           alt="Green plant with white background"
         />
@@ -75,9 +75,9 @@ export const ContactPage = () => {
           alt="Green plant with white background"
         />
       </div>
-      <form className="max-w-xs lg:max-w-3xl mx-auto flex flex-col gap-4 text-xl text-left">
+      <form className="w-3xs md:w-100 lg:w-140 flex flex-col gap-4 text-xl text-left">
         <div className="flex flex-col gap-4 lg:flex-row lg:gap-4">
-          <label className="flex flex-col gap-2">
+          <label className="flex flex-col gap-2 lg:w-1/2">
             Name
             <input
               type="text"
@@ -90,7 +90,7 @@ export const ContactPage = () => {
               className="border border-gray-700"
             />
           </label>
-          <label className="flex flex-col gap-2">
+          <label className="flex flex-col gap-2 lg:w-1/2">
             E-mail
             <input
               type="email"
@@ -117,7 +117,29 @@ export const ContactPage = () => {
             rows="5"
           ></textarea>
         </label>
-        <Button text="Send message" func={handleSubmit} />
+
+        <Button
+          text="Send message"
+          func={handleSubmit}
+          className="
+          w-3xs
+          md:w-60
+          h-15 
+          bg-[#2C7E62] 
+          text-white 
+          rounded-[10px] 
+          shadow-md 
+          mt-[24px]
+          md:mt-0
+          self-center
+          hover:bg-[#00583A]
+          font-quicksand
+          md:col-start-2
+          row-start-2
+          lg:justify-self-end
+          lg:self-start
+          "
+        />
         {formSubmitted && (
           <p>Thank you for your message! We'll get back to you soon.</p>
         )}
