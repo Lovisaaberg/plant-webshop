@@ -1,11 +1,12 @@
-import { HeroSection } from "../components/HeroSection";
-import { ProductsSection } from "../components/ProductsSection";
+import { HeroSection } from "../components/HeroSection"
+import { ProductsSection } from "../components/ProductsSection"
 
-export const LandingPage = (cartItems) => {
+export const LandingPage = () => {
   return (
     <>
       <HeroSection />
-      <ProductsSection />
+      <ProductsSection variant="new" title="New Arrivals" />
+      <ProductsSection variant="random" title="Selected Plants" />
     </>
-  );
-};
+  )
+}
