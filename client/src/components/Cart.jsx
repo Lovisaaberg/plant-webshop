@@ -36,8 +36,8 @@ export const Cart = () => {
               handler={(e) => handleQuantityChange(e, item)}
               className="gap-2 md:row-start-2 md:justify-self-end md:items-end"
             />
-            <Button text="-" func={() => removeFromCart(item.id)} />
           </div>
+          <button onClick={() => removeFromCart(item.id)}><img src="icons/remove-icon.svg" alt="Remove items" /></button>
         </div>
       ))}
       <p>Order total: {totalPrice}kr</p>
