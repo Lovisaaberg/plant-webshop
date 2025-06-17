@@ -42,7 +42,7 @@ export const SelectedPlants = () => {
   return (
     <section
       className="
-    mt-[68px] 
+    mt-[120px] 
     md:px-[20px]"
     >
       <h2
@@ -50,7 +50,7 @@ export const SelectedPlants = () => {
       text-[28px] 
       md:text-[40px] 
       font-semibold 
-      mb-[30px]"
+      mb-[60px]"
       >
         Selected Plants
       </h2>

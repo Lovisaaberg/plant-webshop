@@ -34,20 +34,27 @@ export const NewArrivals = () => {
   if (error) return <p>{error}</p>
 
   return (
-    <section className="
-    mt-[68px] 
-    md:px-[20px]">
-      <h2 className="
+    <section
+      className="
+    mt-[120px] 
+    md:px-[20px]"
+    >
+      <h2
+        className="
       text-[28px] 
       md:text-[40px] 
-      font-semibold mb-[30px]">
+      font-semibold 
+      mb-[60px]"
+      >
         New Arrivals
       </h2>
 
-      <div className="
+      <div
+        className="
       px-[30px] 
       max-w-[1260px] 
-      mx-auto">
+      mx-auto"
+      >
         <div
           className="
         flex 
