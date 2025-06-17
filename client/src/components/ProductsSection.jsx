@@ -47,6 +47,7 @@ export const ProductsSection = ({ title = "Our Plants" }) => {
       <div
         className="
           grid 
+          grid-cols-2
           md:grid-cols-3 
           xl:grid-cols-4 
           gap-[40px] 

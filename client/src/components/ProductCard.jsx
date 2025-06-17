@@ -23,8 +23,7 @@ export const ProductCard = ({ product, className = "" }) => {
     >
       <Link
         to={`/product/${product.id}`}
-        className="
-        flex 
+        className="flex 
         flex-col 
         items-start 
         hover:underline"
