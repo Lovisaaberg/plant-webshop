@@ -1,12 +1,12 @@
 import { HeroSection } from "../components/HeroSection"
-import { ProductsSection } from "../components/ProductsSection"
+import { NewArrivals } from "../components/NewArrivals"
+
 
 export const LandingPage = () => {
   return (
     <>
       <HeroSection />
-      <ProductsSection variant="new" title="New Arrivals" />
-      <ProductsSection variant="random" title="Selected Plants" />
+      <NewArrivals />
     </>
   )
 }

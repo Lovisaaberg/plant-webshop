@@ -2,7 +2,7 @@ import { ProductCard } from "./ProductCard"
 import { supabase } from "../supabase"
 import { useEffect, useState } from "react"
 
-export const ProductsSection = ({ variant = "all", title = "Our Plants" }) => {
+export const ProductsSection = ({ title = "Our Plants" }) => {
   const [plants, setPlants] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
@@ -13,25 +13,12 @@ export const ProductsSection = ({ variant = "all", title = "Our Plants" }) => {
       setError(null)
 
       try {
-        let query = supabase.from("plants").select("*")
-
-        if (variant === "new") {
-          query = query.order("created_at", { ascending: false }).limit(4)
-        } else if (variant === "random") {
-          query = query.limit(20)
-        }
-
-        const { data, error } = await query
+        const { data, error } = await supabase.from("plants").select("*")
 
         if (error) {
           setError(error.message)
         } else {
-          if (variant === "random") {
-            const shuffled = [...data].sort(() => 0.5 - Math.random())
-            setPlants(shuffled.slice(0, 4))
-          } else {
-            setPlants(data)
-          }
+          setPlants(data || [])
         }
       } catch (error) {
         console.error(error)
@@ -42,7 +29,7 @@ export const ProductsSection = ({ variant = "all", title = "Our Plants" }) => {
     }
 
     fetchPlants()
-  }, [variant])
+  }, [])
 
   if (loading) return <p>Loading plants...</p>
   if (error) return <p>Error loading plants: {error}</p>
@@ -59,14 +46,13 @@ export const ProductsSection = ({ variant = "all", title = "Our Plants" }) => {
 
       <div
         className="
-    grid 
-    grid-cols-2 
-    md:grid-cols-3 
-    xl:grid-cols-4 
-    md:gap-[40px_40px]
-    mx-auto
-    max-w-[1260px]
-    px-[30px]"
+          grid 
+          md:grid-cols-3 
+          xl:grid-cols-4 
+          gap-[40px] 
+          max-w-[1260px] 
+          mx-auto 
+          px-[30px]"
       >
         {plants.map((product) => (
           <ProductCard key={product.id} product={product} />
