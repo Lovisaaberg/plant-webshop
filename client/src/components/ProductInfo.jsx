@@ -84,9 +84,11 @@ export const ProductInfo = () => {
           {product.price} kr
         </p>
         <QuantitySelector
-          quantity={quantity}
+          startQuantity={quantity}
           handler={(event) => changeQuantity(event)}
-          className="gap-2 md:row-start-2 md:justify-self-end md:items-end"
+          styleLabel="gap-2 md:row-start-2 md:justify-self-end md:items-end"
+          styleText="text-lg"
+          styleBox="h-10"
         />  
         <Button
           text="Add to Cart"

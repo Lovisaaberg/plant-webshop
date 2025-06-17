@@ -1,17 +1,19 @@
 
 
-export const QuantitySelector = ({ quantity, handler, className }) => {
+export const QuantitySelector = ({ startQuantity, handler, styleLabel, styleText, styleBox }) => {
   return (
     <label
       htmlFor="quantity-select"
-      className={`flex items-center ${className || ""}`}
+      className={`flex items-center ${styleLabel || ""}`}
     >
-      <p className="text-lg">Quantity:</p>
+      <p className={`${styleText || ""}`}>Quantity:</p>
       <select
         id="quantity-select"
-        value={quantity}
+        value={startQuantity}
         onChange={handler}
-        className="w-15 md:w-10 lg:w-15 h-10 border border-gray-400 text-center"
+        className={`w-15 md:w-10 lg:w-15 border border-gray-400 text-center ${
+          styleBox || ""
+        }`}
       >
         {[...Array(11).keys()].map((num) => (
           <option key={num} value={num}>

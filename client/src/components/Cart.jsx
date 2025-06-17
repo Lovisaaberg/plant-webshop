@@ -1,11 +1,9 @@
 import { appContentStore } from "../stores/appContentStore"
 import { QuantitySelector } from "./QuantitySelector"
-import { Button } from "./Button"
 
 export const Cart = () => {
   const cart = appContentStore((state) => state.cart)
   const totalPrice = appContentStore((state) => state.totalPrice())
-  const { clearCart } = appContentStore()
   const { removeFromCart } = appContentStore()
   const { changeQuantityInCart } = appContentStore()
 
@@ -28,21 +26,23 @@ export const Cart = () => {
             src={item.image}
             alt={item.name}
           />
-          <div>
-            <h2>{item.name}</h2>
+          <div className="flex flex-col gap-1 items-start">
+            <h2 className="font-semibold">{item.name}</h2>
             <p>{item.price * item.quantity}kr</p>
             <QuantitySelector
-              quantity={item.quantity}
+              startQuantity={item.quantity}
               handler={(e) => handleQuantityChange(e, item)}
-              className="gap-2 md:row-start-2 md:justify-self-end md:items-end"
+              styleLabel="gap-2"
+              styleText="text-base"
+              styleBox="h-9"
             />
           </div>
-          <button onClick={() => removeFromCart(item.id)}><img src="icons/remove-icon.svg" alt="Remove items" /></button>
+          <button onClick={() => removeFromCart(item.id)}>
+            <img src="icons/remove-icon.svg" alt="Remove items" />
+          </button>
         </div>
       ))}
       <p>Order total: {totalPrice}kr</p>
-      <Button text="Clear cart" func={clearCart} />
-      Cart
     </div>
   )
 }
