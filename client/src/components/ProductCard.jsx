@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import { appContentStore } from "../stores/appContentStore"
 import { Button } from "./Button"
 
-export const ProductCard = ({ product }) => {
+export const ProductCard = ({ product, className = "" }) => {
   if (!product) {
     return null
   }
@@ -11,28 +11,32 @@ export const ProductCard = ({ product }) => {
 
   return (
     <div
-      className="
+      className={`
     flex 
     flex-col 
     mx-auto
     w-[120px]
     md:w-[200px]
-    lg:w-[260px]"
+    lg:w-[260px]
+    ${className}
+    `}
     >
       <Link
         to={`/product/${product.id}`}
-        className="flex flex-col items-start hover:underline"
+        className="flex 
+        flex-col 
+        items-start 
+        hover:underline"
       >
         <img
           src={product.image}
           alt="Product Image"
           className="
-          w-[120px] 
+          product-image
+          w-full
           h-[180px] 
           object-cover
-          md:w-[218px] 
           md:h-[300px]
-          lg:w-[260px] 
           lg:h-[350px]"
         />
         <div
