@@ -2,7 +2,8 @@ import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
 import { supabase } from "../supabase"
 import { appContentStore } from "../stores/appContentStore"
-import { Button } from "../components/Button"
+import { QuantitySelector } from "./QuantitySelector"
+import { Button } from "./Button"
 import Heart from "/icons/heart-mobile-menu.png"
 import Light from "/icons/light-icon.png"
 import Water from "/icons/water-icon.png"
@@ -82,24 +83,13 @@ export const ProductInfo = () => {
         <p className="text-2xl lg:text-3xl font-semibold col-start-1 md:col-start-2 self-center justifify-self-start md:self-end md:justify-self-end">
           {product.price} kr
         </p>
-        <label
-          htmlFor="quantity-select"
-          className="flex items-center gap-2 md:row-start-2 md:justify-self-end md:items-end"
-        >
-          <p className="text-lg">Quantity:</p>
-          <select
-            id="quantity-select"
-            value={quantity}
-            onChange={(event) => changeQuantity(event)}
-            className="w-15 md:w-10 lg:w-15 h-10 border border-gray-400 text-center"
-          >
-            {[...Array(11).keys()].map((num) => (
-              <option key={num} value={num}>
-                {num}
-              </option>
-            ))}
-          </select>
-        </label>
+        <QuantitySelector
+          startQuantity={quantity}
+          handler={(event) => changeQuantity(event)}
+          styleLabel="gap-2 md:row-start-2 md:justify-self-end md:items-end"
+          styleText="text-lg"
+          styleBox="h-10"
+        />  
         <Button
           text="Add to Cart"
           func={() => {
@@ -110,24 +100,24 @@ export const ProductInfo = () => {
           }}
           disabled={quantity === 0}
           className="
-         w-3xs
-    md:w-30
-    lg:w-45
-    h-[40px] 
-    bg-[#2C7E62] 
-    text-white 
-    rounded-[10px] 
-    shadow-md 
-    mt-[24px]
-    self-center
-    hover:bg-[#00583A]
-    disabled:bg-gray-400
-    disabled:cursor-not-allowed
-    font-quicksand
-    md:col-start-2
-    row-start-2
-    lg:justify-self-end
-    lg:self-end
+          w-3xs
+          md:w-30
+          lg:w-45
+          h-[40px] 
+          bg-[#2C7E62] 
+          text-white 
+          rounded-[10px] 
+          shadow-md 
+          mt-[24px]
+          self-center
+          hover:bg-[#00583A]
+          disabled:bg-gray-400
+          disabled:cursor-not-allowed
+          font-quicksand
+          md:col-start-2
+          row-start-2
+          lg:justify-self-end
+          lg:self-end
           "
         />
       </div>
@@ -138,5 +128,3 @@ export const ProductInfo = () => {
     </div>
   )
 }
-
-//<div className="flex justify-between gap-2 mt-8">
