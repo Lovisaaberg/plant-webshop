@@ -18,7 +18,7 @@ export const Cart = () => {
   }
 
   return (
-    <div className="container mx-auto flex flex-col gap-4 w-75">
+    <div className="container mx-auto flex flex-col gap-4 w-full">
       {cart.map((item) => (
         <div key={item.id} className="flex gap-2 items-center">
           <img
