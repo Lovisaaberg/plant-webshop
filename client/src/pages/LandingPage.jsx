@@ -3,6 +3,7 @@ import { NewArrivals } from "../components/NewArrivals"
 import { SelectedPlants } from "../components/SelectedPlants"
 import { Button } from "../components/Button"
 import { useNavigate } from "react-router-dom"
+import { ImageGrid } from "../components/ImageGrid"
 
 export const LandingPage = () => {
   const navigate = useNavigate()
@@ -168,6 +169,7 @@ export const LandingPage = () => {
       </section>
 
       <SelectedPlants />
+      <ImageGrid />
     </>
   )
 }
