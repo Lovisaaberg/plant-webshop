@@ -35,45 +35,65 @@ export const CartPanel = ({ isOpen, onClose }) => {
         bg-[#ffffff] 
         ${isOpen ? "right-0" : "right-[-100%]"} 
         h-full 
-        w-150 
+        w-full
+        md:w-120
+        lg:w-150 
         transition-[right] 
         duration-700 
         ease-in-out
+        overflow-y-scroll
+        flex
+        flex-col
+        items-center
       `}
     >
-      <div className="flex items-center justify-around py-10 w-full">
-        <div></div>
-        <h2 className="font-bold text-[40px]">SHOPPING CART</h2>
-        <button onClick={onClose}>
+      <div className="flex items-center justify-between py-10 w-full md:w-90 lg:w-120">
+        <div className="w-18 md:w-0"></div>
+        <h2 className="font-medium md:font-bold text-xl md:text-3xl lg:text-[40px]">SHOPPING CART</h2>
+        <button onClick={onClose} className="w-8 h-8 md:w-12 md:h-12 mr-10 md:mr-0">
           <img src={Cross} alt="Close-symbol" />
         </button>
       </div>
-      <div className="px-15">
+      <div className="md:px-15">
         <Cart />
       </div>
       <Link to="/checkout">
         <Button
           text="Go to checkout"
           className="
-            w-3xs
-            md:w-60
+            w-65
+            md:w-90
+            lg:w-120
             h-15 
             bg-[#2C7E62] 
             text-white 
             rounded-[10px] 
             shadow-md 
+            mx-15
             mt-[24px]
             md:mt-0
             self-center
             hover:bg-[#00583A]
             font-quicksand
-            md:col-start-2
-            row-start-2
-            lg:justify-self-end
-            lg:self-start
+            font-bold
+            text-xl
             "
         />
       </Link>
+      <button
+        className="
+          text-lg 
+          font-light 
+          mt-1 
+          mb-10 
+          w-65
+          md:w-90
+          lg:w-120
+          "
+        onClick={onClose}
+      >
+        Continue shopping
+      </button>
     </div>
   )
 }

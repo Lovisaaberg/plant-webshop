@@ -20,7 +20,9 @@ export const Header = () => {
     <header className="w-full">
       <div className={`
         w-screen 
-        h-screen 
+        h-screen
+        hidden 
+        md:block
         fixed 
         z-40
         bg-black/50 
