@@ -13,7 +13,7 @@ export const ProductInfo = () => {
   const [product, setProduct] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
-  const [quantity, setQuantity] = useState(0)
+  const [quantity, setQuantity] = useState(1)
 
   //Zuztand hooks
   const addToCart = appContentStore((state) => state.addToCart)
@@ -95,7 +95,7 @@ export const ProductInfo = () => {
           func={() => {
             if (quantity > 0) {
               addToCart(product, quantity)
-              setQuantity(0)
+              setQuantity(1)
             }
           }}
           disabled={quantity === 0}
