@@ -65,16 +65,8 @@ export const appContentStore = create(
       set((state) => {
         const existingItem = state.cart.find((i) => i.id === itemId)
         if (existingItem) {
-          if (existingItem.quantity > 1) {
-            return {
-              cart: state.cart.map((i) =>
-                i.id === itemId ? { ...i, quantity: i.quantity - 1 } : i
-              ),
-            }
-          } else {
-            return {
-              cart: state.cart.filter((i) => i.id !== itemId),
-            }
+          return {
+            cart: state.cart.filter((i) => i.id !== itemId),
           }
         }
       }),
