@@ -18,7 +18,8 @@ export const Header = () => {
 
   return (
     <header className="w-full">
-      <div className={`
+      <div
+        className={`
         w-screen 
         h-screen
         hidden 
@@ -29,8 +30,9 @@ export const Header = () => {
         transition-opacity 
         duration-700 
         ease-in-out 
-        ${isPanelOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}
-        `}></div>
+        ${isPanelOpen ? "opacity-100" : "opacity-0 pointer-events-none"}
+        `}
+      ></div>
       <div className="mx-auto flex items-center justify-between h-[106px] pt-[50px] px-[16px] pb-[20px]">
         <Link to="/">
           <div className="logo-font text-[64px] font-extralight">LÖV.</div>
@@ -43,7 +45,22 @@ export const Header = () => {
 
         <div className="flex items-center gap-4 order-last">
           <button className="ml-4 flex items-center gap-2" onClick={openPanel}>
-            <p>{numberOfItems}</p>
+            <div className="
+              bg-[#2C7E62] 
+              text-white 
+              rounded-full 
+              w-6 
+              h-6 
+              flex 
+              items-center 
+              justify-center 
+              relative
+              left-16
+              bottom-5
+              "
+              >
+              <p className="font-quicksand text-xl">{numberOfItems}</p>
+            </div>
             <img src="/icons/shopping-cart-empty.png" alt="Shopping cart" />
           </button>
 
