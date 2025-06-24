@@ -1,13 +1,35 @@
+import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { appContentStore } from "../stores/appContentStore"
 import { Button } from "./Button"
 
 export const ProductCard = ({ product, className = "" }) => {
+  const { addToCart } = appContentStore()
+  const [isFavorite, setIsFavorite] = useState(false)
+
+  useEffect(() => {
+    const savedFavorites = JSON.parse(localStorage.getItem("favorites") || "[]")
+    setIsFavorite(savedFavorites.includes(product.id))
+  }, [product.id])
+
   if (!product) {
     return null
   }
 
-  const { addToCart } = appContentStore()
+  const toggleFavorite = () => {
+    const savedFavorites = JSON.parse(localStorage.getItem("favorites") || "[]")
+    let updatedFavorites
+
+    if (savedFavorites.includes(product.id)) {
+      updatedFavorites = savedFavorites.filter((id) => id !== product.id)
+      setIsFavorite(false)
+    } else {
+      updatedFavorites = [...savedFavorites, product.id]
+      setIsFavorite(true)
+    }
+
+    localStorage.setItem("favorites", JSON.stringify(updatedFavorites))
+  }
 
   return (
     <div
@@ -83,17 +105,20 @@ export const ProductCard = ({ product, className = "" }) => {
         mt-[16px]
         lg:mt-0"
         >
-          <Button>
+          <Button func={toggleFavorite}>
             <img
-              src="/icons/heart-mobile-menu.png"
-              alt="Add to favorites"
+              src={
+                isFavorite
+                  ? "/icons/heart-filled.png"
+                  : "/icons/heart-mobile-menu.png"
+              }
+              alt={isFavorite ? "Remove from favorites" : "Add to favorites"}
               className="
               w-[30px] 
               h-[30px] 
               lg:w-[30px] 
               lg:h-[30px] 
-              cursor-pointer
-              "
+              cursor-pointer"
             />
           </Button>
 
