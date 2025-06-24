@@ -1,6 +1,4 @@
-import { useParams } from "react-router-dom"
-import { useEffect, useState } from "react"
-import { supabase } from "../supabase"
+import { useState } from "react"
 import { appContentStore } from "../stores/appContentStore"
 import { QuantitySelector } from "./QuantitySelector"
 import { Button } from "./Button"
@@ -8,37 +6,9 @@ import Heart from "/icons/heart-mobile-menu.png"
 import Light from "/icons/light-icon.png"
 import Water from "/icons/water-icon.png"
 
-export const ProductInfo = () => {
-  const { id } = useParams()
-  const [product, setProduct] = useState(null)
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
+export const ProductInfo = ({product}) => {
   const [quantity, setQuantity] = useState(1)
-
-  //Zuztand hooks
   const addToCart = appContentStore((state) => state.addToCart)
-
-  useEffect(() => {
-    const fetchProduct = async () => {
-      const { data, error } = await supabase
-        .from("plants")
-        .select("*")
-        .eq("id", id)
-        .single()
-
-      if (error) {
-        setError(error.message)
-      } else {
-        setProduct(data)
-      }
-      setLoading(false)
-    }
-    fetchProduct()
-  }, [id])
-
-  if (loading) return <p>Loading product...</p>
-  if (error) return <p>Error loading product: {error}</p>
-  if (!product) return <p>Product not found</p>
 
   const changeQuantity = (event) => {
     const newQuantity = Number(event.target.value)
