@@ -11,7 +11,7 @@ export const HeroSection = () => {
   return (
     <div className="relative h-[600px] w-screen">
       <img
-        src="/src/assets/hero-picture.png"
+        src="/images/hero-picture.png"
         alt="Hero image"
         className="
         w-full

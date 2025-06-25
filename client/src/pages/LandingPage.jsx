@@ -4,6 +4,7 @@ import { SelectedPlants } from "../components/SelectedPlants"
 import { Button } from "../components/Button"
 import { useNavigate } from "react-router-dom"
 import { ImageGrid } from "../components/ImageGrid"
+import plantCareImage from "../assets/plant-care-image.png"
 
 export const LandingPage = () => {
   const navigate = useNavigate()
@@ -34,7 +35,7 @@ export const LandingPage = () => {
         bg-[#E9E2DB]"
         >
           <img
-            src="/images/plant-care-image.png"
+            src={plantCareImage}
             alt="Plant care"
             className="
             w-full 
@@ -96,7 +97,7 @@ export const LandingPage = () => {
         relative"
         >
           <img
-            src="/images/plant-care-image.png"
+            src={plantCareImage}
             alt="Plant care"
             className="
             absolute 
