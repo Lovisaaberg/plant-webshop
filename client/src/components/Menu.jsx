@@ -39,21 +39,23 @@ export const Menu = ({ handleMenuClick }) => {
           <img
             src="/icons/menu.png"
             alt="Open menu"
-            className="w-[36px] h-[36px]"
+            className="w-[36px] h-[36px] mt-[6px]"
           />
         )}
       </button>
 
       {/* Menu for desktop */}
 
-      <ul className="
+      <ul
+        className="
       hidden 
       md:flex 
       flex-row 
       lg:gap-[60px] 
       md:gap-[30px] 
       justify-center 
-      text-2xl">
+      text-2xl"
+      >
         {menuLinks.map((link, index) => (
           <li key={`navlink-${index}`}>
             <NavLink
@@ -76,10 +78,14 @@ export const Menu = ({ handleMenuClick }) => {
         <div className="fixed inset-0 bg-white z-50 flex flex-col items-center justify-center text-2xl gap-6">
           <button
             onClick={closeMenu}
-            className="absolute top-6 right-6"
+            className="absolute top-6 right-4"
             aria-label="Close menu"
           >
-            <img src="/icons/cross.png" alt="Close menu" className="w-8 h-8" />
+            <img
+              src="/icons/cross.png"
+              alt="Close menu"
+              className="w-9 h-9 mt-[24px]"
+            />
           </button>
 
           {/* Links */}
