@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom"
 import { useEffect, useState, useRef } from "react"
+import { Link } from "react-router-dom"
 import { appContentStore } from "../stores/appContentStore"
 import { favoriteContentStore } from "../stores/favoritesContentStore"
 import { Menu } from "./Menu"
@@ -23,6 +24,9 @@ export const Header = () => {
     }
     previousLength.current = favorites.length
   }, [favorites.length])
+
+  const isPanelOpen = appContentStore((state) => state.slideInCartIsOpen)
+  const setIsPanelOpen = appContentStore((state) => state.setSlideInCartIsOpen)
 
   const openPanel = () => {
     setIsPanelOpen(true)
