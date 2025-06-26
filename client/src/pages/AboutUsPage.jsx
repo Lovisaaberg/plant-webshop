@@ -76,7 +76,7 @@ export const AboutUsPage = () => {
               href="https://tejpex.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="mb-[60px]
+              className="mb-[100px]
             hover:scale-103 
             transition-transform 
             duration-150"
@@ -125,11 +125,20 @@ export const AboutUsPage = () => {
         md:text-[20px]
         mb-[16px]"
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-              quis elit mauris. Proin blandit nibh at dui malesuada tempus
-              volutpat sed felis. Duis a consectetur dolor. Sed ante lorem,
-              fringilla.
+              An Agile project manager who is passionate about creating
+              structure, improving workflows and helping teams develop.
             </p>
+            <a
+              href="https://www.linkedin.com/in/juliette-barsomi/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mb-[100px]
+            hover:scale-103 
+            transition-transform 
+            duration-150"
+            >
+              https://www.linkedin.com/in/juliette-barsomi/
+            </a>
           </div>
           <div
             className="
@@ -180,7 +189,7 @@ export const AboutUsPage = () => {
               href="https://lovisaaberg.netlify.app/"
               target="_blank"
               rel="noopener noreferrer"
-              className="mb-[60px]
+              className="mb-[100px]
             hover:scale-103 
             transition-transform 
             duration-150"
@@ -201,8 +210,8 @@ export const AboutUsPage = () => {
       "
           >
             <img
-              src={profilePic}
-              alt="Profile picture"
+              src="/images/Patric.png"
+              alt="Picture of Patric"
               className="
           w-[100px] 
           h-[100px] 
@@ -228,17 +237,23 @@ export const AboutUsPage = () => {
         md:text-[20px]
         mb-[16px]"
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-              quis elit mauris. Proin blandit nibh at dui malesuada tempus
-              volutpat sed felis. Duis a consectetur dolor. Sed ante lorem,
-              fringilla.
+              Frontend developer, now focusing on backend development. A
+              highlight from this project was implementing Stripe by creating an
+              API endpoint to initiate payment sessions, which helped me
+              understand how to connect external payment services.
             </p>
+
             <a
-              href=""
+              href="              https://github.com/PatricAngly"
               target="_blank"
               rel="noopener noreferrer"
-              className="mb-[60px]"
-            ></a>
+              className="mb-[80px]
+            hover:scale-103 
+            transition-transform 
+            duration-150"
+            >
+              https://github.com/PatricAngly
+            </a>
           </div>
         </div>
 
