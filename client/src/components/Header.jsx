@@ -91,7 +91,7 @@ export const Header = () => {
             <img
               src={
                 favorites.length > 0
-                  ? "icons/heart-icon-green.png"
+                  ? "/icons/heart-icon-green.png"
                   : "/icons/heart-icon.png"
               }
               alt="Favorite hearts"
