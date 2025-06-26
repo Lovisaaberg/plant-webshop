@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { appContentStore } from "../stores/appContentStore"
 import { QuantitySelector } from "./QuantitySelector"
 
@@ -24,16 +25,20 @@ export const Cart = () => {
           key={item.id}
           className="flex gap-2 items-center justify-start w-full md:w-90 lg:w-120"
         >
-          <img
-            className="w-20 md:w-25 lg:w-30 h-25 md:h-35 lg:h-45 object-cover"
-            src={item.image}
-            alt={item.name}
-          />
+          <Link to={`/product/${item.id}`}>
+            <img
+              className="w-20 md:w-25 lg:w-30 h-25 md:h-35 lg:h-45 object-cover"
+              src={item.image}
+              alt={item.name}
+            />
+          </Link>
           <div className="flex flex-col gap-1 items-start justify-between w-65 lg:w-75 h-25 md:h-35 lg:h-45">
             <div className="flex flex-col gap-1 items-start">
-              <h2 className="font-semibold text-base md:text-lg">
-                {item.name}
-              </h2>
+              <Link to={`/product/${item.id}`}>
+                <h2 className="font-semibold text-base md:text-lg">
+                  {item.name}
+                </h2>
+              </Link>
               <p className="text-base">{item.price * item.quantity}kr</p>
             </div>
             <QuantitySelector
@@ -46,7 +51,7 @@ export const Cart = () => {
           </div>
           <button onClick={() => removeFromCart(item.id)}>
             <img
-              src="icons/remove-icon.svg"
+              src="/icons/remove-icon.svg"
               alt="Remove items"
               className="h-8 md:h-10"
             />

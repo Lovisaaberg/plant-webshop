@@ -6,6 +6,7 @@ import { Button } from "./Button"
 export const ProductCard = ({ product, className = "" }) => {
   const { addToCart } = appContentStore()
   const [isFavorite, setIsFavorite] = useState(false)
+  const [isAnimating, setIsAnimating] = useState(false)
 
   useEffect(() => {
     const savedFavorites = JSON.parse(localStorage.getItem("favorites") || "[]")
@@ -29,6 +30,12 @@ export const ProductCard = ({ product, className = "" }) => {
     }
 
     localStorage.setItem("favorites", JSON.stringify(updatedFavorites))
+  }
+
+  const handleClick = () => {
+    setIsAnimating(true)
+    addToCart(product)
+    setTimeout(() => setIsAnimating(false), 300)
   }
 
   return (
@@ -121,18 +128,19 @@ export const ProductCard = ({ product, className = "" }) => {
               cursor-pointer"
             />
           </Button>
-
-          <Button func={() => addToCart(product)}>
+          <Button func={handleClick} className="p-2">
             <img
-              src="/icons/shopping-cart-plus.png"
+              src="/icons/shopping-cart-plus.svg"
               alt="Add to shopping cart"
-              className="
-              w-[30px] 
-              h-[30px] 
-              lg:w-[30px] 
-              lg:h-[30px] 
-              ml-[8px] 
-              cursor-pointer"
+              className={`
+                w-[30px] 
+                h-[30px] 
+                ml-[8px] 
+                cursor-pointer 
+                transition 
+                duration-300 
+                ${isAnimating ? "scale-125" : "scale-100"}
+              `}
             />
           </Button>
         </div>
