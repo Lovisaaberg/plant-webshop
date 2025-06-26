@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { appContentStore } from "../stores/appContentStore"
+import { favoriteContentStore } from "../stores/favoritesContentStore"
 import { Button } from "./Button"
 
 export const ProductCard = ({ product, className = "" }) => {
@@ -8,29 +8,12 @@ export const ProductCard = ({ product, className = "" }) => {
   const [isFavorite, setIsFavorite] = useState(false)
   const [isAnimating, setIsAnimating] = useState(false)
 
-  useEffect(() => {
-    const savedFavorites = JSON.parse(localStorage.getItem("favorites") || "[]")
-    setIsFavorite(savedFavorites.includes(product.id))
-  }, [product.id])
+  const favorites = favoriteContentStore((state) => state.favorites)
+  const toggleFavorite = favoriteContentStore((state) => state.toggleFavorite)
 
-  if (!product) {
-    return null
-  }
+  if (!product) return null
 
-  const toggleFavorite = () => {
-    const savedFavorites = JSON.parse(localStorage.getItem("favorites") || "[]")
-    let updatedFavorites
-
-    if (savedFavorites.includes(product.id)) {
-      updatedFavorites = savedFavorites.filter((id) => id !== product.id)
-      setIsFavorite(false)
-    } else {
-      updatedFavorites = [...savedFavorites, product.id]
-      setIsFavorite(true)
-    }
-
-    localStorage.setItem("favorites", JSON.stringify(updatedFavorites))
-  }
+  const isFavorite = favorites.includes(product.id)
 
   const handleClick = () => {
     setIsAnimating(true)
@@ -112,11 +95,11 @@ export const ProductCard = ({ product, className = "" }) => {
         mt-[16px]
         lg:mt-0"
         >
-          <Button func={toggleFavorite}>
+          <Button func={() => toggleFavorite(product.id)}>
             <img
               src={
                 isFavorite
-                  ? "/icons/heart-filled.png"
+                  ? "/icons/heart-icon-green.png"
                   : "/icons/heart-mobile-menu.png"
               }
               alt={isFavorite ? "Remove from favorites" : "Add to favorites"}

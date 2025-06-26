@@ -7,6 +7,7 @@ import { ProductPage } from "./pages/ProductPage"
 import { AboutUsPage } from "./pages/AboutUsPage"
 import { PlantcarePage } from "./pages/PlantcarePage"
 import { ContactPage } from "./pages/ContactPage"
+import { FavoritesPage } from "./pages/FavoritesPage"
 import { OrderPage } from "./pages/OrderPage"
 import { Header } from "./components/Header"
 import { Footer } from "./components/Footer"
@@ -18,7 +19,7 @@ function App() {
     <BrowserRouter>
       <ScrollToTop />
       <Header />
-      <main>
+      <main className="pt-[120px]">
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/products" element={<PlantsPage />} />
@@ -26,6 +27,7 @@ function App() {
           <Route path="/aboutus" element={<AboutUsPage />} />
           <Route path="/plantcare" element={<PlantcarePage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/favorites" element={<FavoritesPage />} />
           <Route path="/order" element={<OrderPage />} />
         </Routes>
       </main>
