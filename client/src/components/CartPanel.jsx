@@ -1,14 +1,15 @@
-import { loadStripe } from "@stripe/stripe-js"
-import { useEffect, useRef } from "react"
-import { appContentStore } from "../stores/appContentStore"
-import { Cart } from "./Cart"
-import { Button } from "./Button"
+import { loadStripe } from "@stripe/stripe-js";
+import { useEffect, useRef } from "react";
+import { appContentStore } from "../stores/appContentStore";
+import { Cart } from "./Cart";
+import { Button } from "./Button";
 
 export const CartPanel = ({ isOpen, onClose }) => {
-  const cart = appContentStore((state) => state.cart)
-  const panelRef = useRef()
+  const cart = appContentStore((state) => state.cart);
+  const panelRef = useRef();
 
   const handleCheckout = async () => {
+    onClose();
     const response = await fetch(
       "http://localhost:3000/api/stripe/create-checkout-session",
       {
@@ -18,41 +19,40 @@ export const CartPanel = ({ isOpen, onClose }) => {
         },
         body: JSON.stringify({ products: cart }),
       }
-    )
+    );
 
-    const session = await response.json()
+    const session = await response.json();
 
     const stripe = await loadStripe(
       "pk_test_51RQ74HPTeALF4muskKk4SWJ7tHeeQthYvn68413CMFWtf21Fp9Nwc7y1TOMwZE3wvZrR4nouai1XTYBwNhAaffl200TiEo2T5z"
-    )
+    );
 
     const { error } = await stripe.redirectToCheckout({
       sessionId: session.id,
-    })
+    });
 
     if (error) {
-      console.error("Error:", error)
+      console.error("Error:", error);
     }
-    console.log(response)
-  }
+  };
 
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (panelRef.current && !panelRef.current.contains(event.target)) {
-        onClose()
+        onClose();
       }
-    }
+    };
 
     if (isOpen) {
-      document.addEventListener("mousedown", handleClickOutside)
+      document.addEventListener("mousedown", handleClickOutside);
     } else {
-      document.removeEventListener("mousedown", handleClickOutside)
+      document.removeEventListener("mousedown", handleClickOutside);
     }
 
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside)
-    }
-  }, [isOpen, onClose])
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen, onClose]);
 
   return (
     <div
@@ -133,5 +133,5 @@ export const CartPanel = ({ isOpen, onClose }) => {
         Continue shopping
       </button>
     </div>
-  )
-}
+  );
+};
