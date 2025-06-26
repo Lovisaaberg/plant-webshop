@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom"
-import { useState } from "react"
 import { appContentStore } from "../stores/appContentStore"
 import { Menu } from "./Menu"
 import { CartPanel } from "./CartPanel"
 
 export const Header = () => {
   const numberOfItems = appContentStore((state) => state.numberOfItems())
-  const [isPanelOpen, setIsPanelOpen] = useState(false)
+  const isPanelOpen = appContentStore((state) => state.slideInCartIsOpen)
+  const setIsPanelOpen = appContentStore((state) => state.setSlideInCartIsOpen)
 
   const openPanel = () => {
     setIsPanelOpen(true)

@@ -46,7 +46,7 @@ export const Cart = () => {
           </div>
           <button onClick={() => removeFromCart(item.id)}>
             <img
-              src="icons/remove-icon.svg"
+              src="/icons/remove-icon.svg"
               alt="Remove items"
               className="h-8 md:h-10"
             />

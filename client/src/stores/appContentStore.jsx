@@ -20,11 +20,11 @@ export const appContentStore = create(
         return cart.reduce((acc, item) => acc + item.price * item.quantity, 0)
       }
     },
-
     addToCart: (item, numberOfItems) =>
       set((state) => {
         const existingItem = state.cart.find((i) => i.id === item.id)
         const itemsIncrease = numberOfItems || 1
+        state.setSlideInCartIsOpen(true)
         if (existingItem) {
           return {
             cart: state.cart.map((i) =>
@@ -71,5 +71,10 @@ export const appContentStore = create(
         }
       }),
     clearCart: () => set({ cart: [] }),
+    slideInCartIsOpen: false,
+    setSlideInCartIsOpen: (isOpen) =>
+      set(() => ({
+        slideInCartIsOpen: isOpen,
+      })),
   }))
 )

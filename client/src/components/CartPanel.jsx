@@ -3,7 +3,6 @@ import { useEffect, useRef } from "react"
 import { appContentStore } from "../stores/appContentStore"
 import { Cart } from "./Cart"
 import { Button } from "./Button"
-import Cross from "/icons/cross.png"
 
 export const CartPanel = ({ isOpen, onClose }) => {
   const cart = appContentStore((state) => state.cart)
@@ -86,7 +85,7 @@ export const CartPanel = ({ isOpen, onClose }) => {
           onClick={onClose}
           className="w-8 h-8 md:w-12 md:h-12 mr-10 md:mr-0"
         >
-          <img src={Cross} alt="Close-symbol" />
+          <img src="/icons/cross.svg" alt="Close-symbol" />
         </button>
       </div>
       <div className="md:px-15">
