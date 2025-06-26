@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom"
+import { useState } from "react"
 import { appContentStore } from "../stores/appContentStore"
 import { favoriteContentStore } from "../stores/favoritesContentStore"
 import { Button } from "./Button"
 
 export const ProductCard = ({ product, className = "" }) => {
   const { addToCart } = appContentStore()
-  const [isFavorite, setIsFavorite] = useState(false)
   const [isAnimating, setIsAnimating] = useState(false)
 
   const favorites = favoriteContentStore((state) => state.favorites)

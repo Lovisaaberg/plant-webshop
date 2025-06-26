@@ -1,6 +1,5 @@
 import { Link, useNavigate } from "react-router-dom"
 import { useEffect, useState, useRef } from "react"
-import { Link } from "react-router-dom"
 import { appContentStore } from "../stores/appContentStore"
 import { favoriteContentStore } from "../stores/favoritesContentStore"
 import { Menu } from "./Menu"
@@ -10,7 +9,6 @@ import React from "react"
 export const Header = () => {
   const navigate = useNavigate()
   const numberOfItems = appContentStore((state) => state.numberOfItems())
-  const [isPanelOpen, setIsPanelOpen] = useState(false)
   const [animateHeart, setAnimateHeart] = useState(false)
 
   const favorites = favoriteContentStore((state) => state.favorites)
