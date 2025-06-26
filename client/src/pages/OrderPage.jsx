@@ -4,7 +4,6 @@ import cancelAnimation from "../animations/cancel.json";
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { appContentStore } from "../stores/appContentStore";
-import { Button } from "../components/Button";
 
 export const OrderPage = () => {
   const [searchParams] = useSearchParams();
@@ -35,17 +34,11 @@ export const OrderPage = () => {
     fetchSession(sessionId);
   }, [sessionId]);
 
-  console.log(sessionData);
-  const restoreCart = () => {
-    const cart = sessionData.line_items.map((item) => ({
-      id: item.price.product.id,
-      name: item.price.product.name,
-      price: item.price.unit_amount / 100,
-      quantity: item.quantity,
-      image: item.price.product.images[0],
-    }));
-    appContentStore.setState({ cart });
-  };
+  useEffect(() => {
+    if (sessionData && sessionData.payment_status === "paid") {
+      appContentStore.setState({ cart: [] });
+    }
+  }, [sessionData]);
 
   return (
     <>
@@ -91,15 +84,14 @@ export const OrderPage = () => {
                 </ul>
               </>
             ) : (
-              <>
+              <div className="h-[500px] flex flex-col items-center justify-center">
                 <div className="w-80 h-80 mx-auto mt-10">
                   <Lottie animationData={cancelAnimation} loop={false} />
                 </div>
-                <h2 className="text-3xl font-bold text-center mt-4">
+                <h2 className="text-3xl font-bold mt-4">
                   Your order has been canceled. Please try again.
                 </h2>
-                <Button func={restoreCart} text={"Restore Cart"} />
-              </>
+              </div>
             )}
           </>
         )}
