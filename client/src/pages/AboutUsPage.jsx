@@ -1,6 +1,5 @@
 import React from "react"
 import { NavigationRow } from "../components/NavigationRow"
-import profilePic from "../assets/profile-pic.jpg"
 
 export const AboutUsPage = () => {
   return (
@@ -9,7 +8,7 @@ export const AboutUsPage = () => {
 
       <div
         className="
-        mt-[68px]
+        mt-[30px]
         mx-auto
         lg:mx-[100px]"
       >
@@ -98,7 +97,7 @@ export const AboutUsPage = () => {
       "
           >
             <img
-              src={profilePic}
+              src="/images/Juliette.png"
               alt="Profile picture"
               className="
           w-[100px] 

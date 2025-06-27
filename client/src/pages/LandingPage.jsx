@@ -162,7 +162,7 @@ export const LandingPage = () => {
                 text-white 
                 rounded-[50px] 
                 w-[180px] 
-                h-[40px] 
+                h-[50px] 
                 shadow-md hover:bg-[#AE8000] cursor-pointer"
               />
             </div>

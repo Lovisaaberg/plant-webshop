@@ -83,7 +83,7 @@ export const SelectedPlants = () => {
         func={handleNavigate}
         className="
           w-[180px] 
-          h-[40px] 
+          h-[50px] 
           bg-[#D79E00] 
           text-white 
           rounded-[50px] 

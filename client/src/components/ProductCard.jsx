@@ -83,7 +83,8 @@ export const ProductCard = ({ product, className = "" }) => {
           className="
         text-left 
         text-[18px]
-        lg:text-[20px]"
+        lg:text-[20px]
+        mt-2"
         >
           {product.price} kr
         </p>

@@ -38,7 +38,8 @@ export const ProductInfo = ({ product }) => {
     items-center 
     justify-center 
     md:items-start 
-    p-4 text-left 
+    p-4 
+    text-left 
     md:w-150 
     lg:w-220 
     mx-auto"
@@ -109,7 +110,7 @@ export const ProductInfo = ({ product }) => {
       col-start-2 
       w-3xs 
       lg:w-100 
-      gap-2"
+      gap-6"
       >
         <div
           className="
@@ -120,11 +121,14 @@ export const ProductInfo = ({ product }) => {
           <img
             src={Light}
             alt="Icon for light preference"
-            className="h-[40px]"
+            className="h-[36px]"
           />
-          <p className="text-base">
+
+          <p className="text-base md:hidden">
             Light: <br /> {product.light}
           </p>
+
+          <p className="text-base hidden md:block">Light: {product.light}</p>
         </div>
         <div
           className="
@@ -132,10 +136,12 @@ export const ProductInfo = ({ product }) => {
         items-center 
         gap-2"
         >
-          <img src={Water} alt="Icon for water needs" className="h-[40px]" />
-          <p className="text-base">
+          <img src={Water} alt="Icon for water needs" className="h-[36px]" />
+
+          <p className="text-base md:hidden">
             Water: <br /> {product.water}
           </p>
+          <p className="text-base hidden md:block">Water: {product.water}</p>
         </div>
       </div>
       <div
@@ -222,7 +228,8 @@ export const ProductInfo = ({ product }) => {
         <h3
           className="
         text-2xl 
-        font-bold"
+        font-bold
+        mt-4"
         >
           Plant description
         </h3>

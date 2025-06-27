@@ -45,7 +45,8 @@ export const Header = () => {
     fixed
     top-0
     z-50
-    bg-white"
+    bg-white
+    max-w-[1440px]"
     >
       <div
         className={`
