@@ -3,7 +3,6 @@ import { appContentStore } from "../stores/appContentStore"
 import { QuantitySelector } from "./QuantitySelector"
 import { favoriteContentStore } from "../stores/favoritesContentStore"
 import { Button } from "./Button"
-import Heart from "/icons/heart-mobile-menu.png"
 import Light from "/icons/light-icon.png"
 import Water from "/icons/water-icon.png"
 

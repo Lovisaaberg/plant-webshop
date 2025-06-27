@@ -53,7 +53,7 @@ export const Cart = () => {
             <img
               src="/icons/remove-icon.svg"
               alt="Remove items"
-              className="h-8 md:h-10"
+              className="h-8 md:h-10 cursor-pointer"
             />
           </button>
         </div>

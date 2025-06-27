@@ -1,6 +1,10 @@
-
-
-export const QuantitySelector = ({ startQuantity, handler, styleLabel, styleText, styleBox }) => {
+export const QuantitySelector = ({
+  startQuantity,
+  handler,
+  styleLabel,
+  styleText,
+  styleBox,
+}) => {
   return (
     <label
       htmlFor="quantity-select"
@@ -11,7 +15,7 @@ export const QuantitySelector = ({ startQuantity, handler, styleLabel, styleText
         id="quantity-select"
         value={startQuantity}
         onChange={handler}
-        className={`w-15 md:w-10 lg:w-15 border border-gray-400 text-center ${
+        className={`w-15 md:w-10 lg:w-15 border border-gray-400 text-center cursor-pointer ${
           styleBox || ""
         }`}
       >

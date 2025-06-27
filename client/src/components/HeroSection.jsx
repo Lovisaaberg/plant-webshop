@@ -70,7 +70,7 @@ export const HeroSection = () => {
           h-[40px] 
           bg-[#D79E00] 
           text-white 
-          rounded-[10px] 
+          rounded-[50px] 
           shadow-md 
           mt-[24px]"
         />
@@ -116,12 +116,12 @@ export const HeroSection = () => {
           className="
           w-[180px] 
           h-[40px] 
-          md:w-[200px] 
-          md:h-[60px] 
-          md:text-[24px]
+          md:w-[180px] 
+          md:h-[50px] 
+          md:text-[18px]
           bg-[#D79E00] 
           text-white 
-          rounded-[10px] 
+          rounded-[50px] 
           shadow-md 
           hover:bg-[#AE8000]
           cursor-pointer
