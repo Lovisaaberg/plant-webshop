@@ -105,7 +105,7 @@ export const CartPanel = ({ isOpen, onClose }) => {
           lg:w-120
           h-10
           md:h-12
-          lg:h-15 
+          lg:h-12 
           bg-[#2C7E62] 
           text-white 
           rounded-[10px] 
@@ -116,15 +116,15 @@ export const CartPanel = ({ isOpen, onClose }) => {
           self-center
           hover:bg-[#00583A]
           font-quicksand
-          text-[18px]
-          lg:text-2xl
+          lg:text-xl
           lg:py-2
           cursor-pointer
           "
       />
       <button
         className="
-          text-lg 
+          text-l
+          md:text-lg 
           font-light 
           mt-1 
           mb-10 

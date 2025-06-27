@@ -1,6 +1,7 @@
 import emailjs from "@emailjs/browser"
 import { useState } from "react"
 import { Button } from "../components/Button"
+import { NavigationRow } from "../components/NavigationRow"
 import plant1 from "../assets/contact-1.png"
 import plant2 from "../assets/contact-2.png"
 import plant3 from "../assets/contact-3.png"
@@ -46,85 +47,95 @@ export const ContactPage = () => {
   }
 
   return (
-    <div className="container flex flex-col items-center justify-center gap-4 lg:gap-7 p-4 md:w-150 lg:w-230 mx-auto">
-      <div className="w-3xs md:w-100 lg:w-140 flex flex-col items-center justify-center gap-2 md:gap-0">
-        <h2 className="text-3xl mb-2 md:mb-5">Contact</h2>
-        <p className="text-base whitespace-normal">
-          Whether you have questions about plant care, need help with your
-          order, or just want to know more about our products - we'd love to
-          hear from you.
-        </p>
-        <p className="text-base">
-          Fill in the form, and we'll get back to you as soon as we can.
-        </p>
-      </div>
-      <div className="flex gap-1 lg:gap-4 w-78 md:w-150 lg:w-230 justify-center items-center">
-        <img
-          className="max-w-1/3 h-75 object-cover"
-          src={plant1}
-          alt="Green plant with white background"
-        />
-        <img
-          className="max-w-1/3 h-[300px] object-cover"
-          src={plant2}
-          alt="Green plant with white background"
-        />
-        <img
-          className="max-w-1/3 h-[300px] object-cover"
-          src={plant3}
-          alt="Green plant with white background"
-        />
-      </div>
-      <form className="w-3xs md:w-100 lg:w-140 flex flex-col gap-4 text-xl text-left">
-        <div className="flex flex-col gap-4 lg:flex-row lg:gap-4">
-          <label className="flex flex-col gap-2 lg:w-1/2">
-            Name
-            <input
-              type="text"
-              name="name"
-              required
-              value={formData.name}
-              onChange={(e) =>
-                setFormData({ ...formData, name: e.target.value })
-              }
-              className="border border-gray-700"
-            />
-          </label>
-          <label className="flex flex-col gap-2 lg:w-1/2">
-            E-mail
-            <input
-              type="email"
-              name="email"
-              required
-              value={formData.email}
-              onChange={(e) =>
-                setFormData({ ...formData, email: e.target.value })
-              }
-              className="border border-gray-700"
-            />
-          </label>
-        </div>
-        <label className="flex flex-col gap-2">
-          Your message
-          <textarea
-            name="message"
-            required
-            value={formData.message}
-            onChange={(e) =>
-              setFormData({ ...formData, message: e.target.value })
-            }
-            className="border border-gray-700"
-            rows="5"
-          ></textarea>
-        </label>
+    <>
+      <NavigationRow links={[{ text: "Contact", to: "/contact" }]} />
 
-        <Button
-          text="Send message"
-          func={handleSubmit}
-          className="
+      <div className="container flex flex-col items-center justify-center gap-4 lg:gap-7 px-4 md:w-150 lg:w-230 mx-auto">
+        <div className="w-3xs md:w-100 lg:w-140 flex flex-col items-center justify-center gap-2 md:gap-0">
+          <h2
+            className="
+      text-[28px] 
+      md:text-[40px] 
+      font-semibold"
+          >
+            Contact
+          </h2>
+          <p className="text-base whitespace-normal">
+            Whether you have questions about plant care, need help with your
+            order, or just want to know more about our products - we'd love to
+            hear from you.
+          </p>
+          <p className="text-base mb-[30px]">
+            Fill in the form, and we'll get back to you as soon as we can.
+          </p>
+        </div>
+        <div className="flex gap-1 lg:gap-4 w-78 md:w-150 lg:w-230 justify-center items-center mb-[30px]">
+          <img
+            className="max-w-1/3 h-75 object-cover"
+            src={plant1}
+            alt="Green plant with white background"
+          />
+          <img
+            className="max-w-1/3 h-[300px] object-cover"
+            src={plant2}
+            alt="Green plant with white background"
+          />
+          <img
+            className="max-w-1/3 h-[300px] object-cover"
+            src={plant3}
+            alt="Green plant with white background"
+          />
+        </div>
+        <form className="w-3xs md:w-100 lg:w-140 flex flex-col gap-4 text-xl text-left">
+          <div className="flex flex-col gap-4 lg:flex-row lg:gap-4">
+            <label className="flex flex-col gap-2 lg:w-1/2">
+              Name
+              <input
+                type="text"
+                name="name"
+                required
+                value={formData.name}
+                onChange={(e) =>
+                  setFormData({ ...formData, name: e.target.value })
+                }
+                className="border border-gray-700"
+              />
+            </label>
+            <label className="flex flex-col gap-2 lg:w-1/2">
+              E-mail
+              <input
+                type="email"
+                name="email"
+                required
+                value={formData.email}
+                onChange={(e) =>
+                  setFormData({ ...formData, email: e.target.value })
+                }
+                className="border border-gray-700"
+              />
+            </label>
+          </div>
+          <label className="flex flex-col gap-2">
+            Your message
+            <textarea
+              name="message"
+              required
+              value={formData.message}
+              onChange={(e) =>
+                setFormData({ ...formData, message: e.target.value })
+              }
+              className="border border-gray-700"
+              rows="5"
+            ></textarea>
+          </label>
+
+          <Button
+            text="Send message"
+            func={handleSubmit}
+            className="
           w-3xs
           md:w-60
-          h-15 
+          h-13 
           bg-[#2C7E62] 
           text-white 
           rounded-[10px] 
@@ -139,11 +150,12 @@ export const ContactPage = () => {
           lg:justify-self-end
           lg:self-start
           "
-        />
-        {formSubmitted && (
-          <p>Thank you for your message! We'll get back to you soon.</p>
-        )}
-      </form>
-    </div>
+          />
+          {formSubmitted && (
+            <p>Thank you for your message! We'll get back to you soon.</p>
+          )}
+        </form>
+      </div>
+    </>
   )
 }

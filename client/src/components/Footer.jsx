@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
-import { RiInstagramFill } from "react-icons/ri";
-import { FaFacebook } from "react-icons/fa";
+import { Link } from "react-router-dom"
+import { RiInstagramFill } from "react-icons/ri"
+import { FaFacebook } from "react-icons/fa"
 
 export const Footer = () => {
   return (
@@ -8,16 +8,16 @@ export const Footer = () => {
       <div className="sm:col-start-2 sm:col-end-2">
         <h2 className="text-2xl font-bold mb-4">Links</h2>
         <ul>
-          <li>
-            <Link to="/plants">Plants</Link>
+          <li className="mb-2">
+            <Link to="/products">Plants</Link>
           </li>
-          <li>
+          <li className="mb-2">
             <Link to="/plantcare">Plant care tips</Link>
           </li>
-          <li>
+          <li className="mb-2">
             <Link to="/aboutus">About us</Link>
           </li>
-          <li>
+          <li className="mb-2">
             <Link to="/contact">Contact</Link>
           </li>
         </ul>
@@ -45,9 +45,9 @@ export const Footer = () => {
           </li>
         </ul>
       </div>
-      <div className="col-span-full sm:mt-6 text-xl ">
-        &copy; 2024 Löv. All rights reserved.
+      <div className="col-span-full sm:mt-6 text-xl logo-font">
+        &copy; 2024 LÖV. All rights reserved.
       </div>
     </div>
-  );
-};
+  )
+}
