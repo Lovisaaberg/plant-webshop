@@ -1,38 +1,54 @@
-import { ProductCard } from "./ProductCard"
-import { supabase } from "../supabase"
-import { useEffect, useState } from "react"
+import { ProductCard } from "./ProductCard";
+import { supabase } from "../supabase";
+import { useEffect, useState } from "react";
 
 export const ProductsSection = ({ title = "Our Plants" }) => {
-  const [plants, setPlants] = useState([])
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
+  const [plants, setPlants] = useState([]);
+  const [allPlants, setAllPlants] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [searchError, setSearchError] = useState(null);
 
   useEffect(() => {
-    const fetchPlants = async () => {
-      setLoading(true)
-      setError(null)
+    fetchPlants();
+  }, []);
 
-      try {
-        const { data, error } = await supabase.from("plants").select("*")
+  const fetchPlants = async () => {
+    setLoading(true);
+    setError(null);
 
-        if (error) {
-          setError(error.message)
-        } else {
-          setPlants(data || [])
-        }
-      } catch (error) {
-        console.error(error)
-        setError("Something happened loading plants")
-      } finally {
-        setLoading(false)
+    try {
+      const { data, error } = await supabase.from("plants").select("*");
+
+      if (error) {
+        setError(error.message);
+      } else {
+        setPlants(data || []);
+        setAllPlants(data || []);
       }
+    } catch (error) {
+      console.error(error);
+      setError("Something happened loading plants");
+    } finally {
+      setLoading(false);
     }
+  };
 
-    fetchPlants()
-  }, [])
+  const onSearch = (searchTerm) => {
+    const filtered = allPlants.filter((plant) =>
+      plant.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setPlants(filtered);
 
-  if (loading) return <p>Loading plants...</p>
-  if (error) return <p>Error loading plants: {error}</p>
+    if (filtered.length === 0) {
+      setSearchError("Inga växter hittades.");
+    } else {
+      setSearchError(null);
+    }
+  };
+
+  if (loading) return <p>Loading plants...</p>;
+  if (error) return <p>Error loading plants: {error}</p>;
 
   return (
     <section
@@ -43,6 +59,13 @@ export const ProductsSection = ({ title = "Our Plants" }) => {
       <h2 className="text-[28px] md:text-[40px] font-semibold mb-[30px]">
         {title}
       </h2>
+      <input
+        type="text"
+        placeholder="Search plants..."
+        className="mb-[20px] p-2 border border-gray-300 rounded w-3/5 md:w-1/3"
+        onChange={(e) => onSearch(e.target.value)}
+      />
+      {searchError && <p className="text-black text-2xl">{searchError}</p>}
 
       <div
         className="
@@ -60,5 +83,5 @@ export const ProductsSection = ({ title = "Our Plants" }) => {
         ))}
       </div>
     </section>
-  )
-}
+  );
+};
