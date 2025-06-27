@@ -76,9 +76,9 @@ export const LandingPage = () => {
               className="
               bg-[#D79E00] 
               text-white 
-              rounded-[10px] 
-              px-6 
-              py-3 
+              rounded-[50px] 
+              w-[180px] 
+              h-[40px] 
               shadow-md 
               hover:bg-[#AE8000] 
               cursor-pointer"
@@ -160,9 +160,10 @@ export const LandingPage = () => {
                 className="
                 bg-[#D79E00] 
                 text-white 
-                rounded-[10px] 
-                px-12 
-                py-3 shadow-md hover:bg-[#AE8000] cursor-pointer"
+                rounded-[50px] 
+                w-[180px] 
+                h-[40px] 
+                shadow-md hover:bg-[#AE8000] cursor-pointer"
               />
             </div>
           </div>

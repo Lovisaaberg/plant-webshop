@@ -86,7 +86,7 @@ export const SelectedPlants = () => {
           h-[40px] 
           bg-[#D79E00] 
           text-white 
-          rounded-[10px] 
+          rounded-[50px] 
           shadow-md 
           mt-[24px]
           hover:bg-[#AE8000]
