@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom"
 import { NavigationRow } from "../components/NavigationRow"
+import { LowLightPlants } from "../components/LowLightPlants"
 import Image1 from "../assets/plantcare-plant1.svg"
 import Image2 from "../assets/plantcare-plant2.svg"
 import Image3 from "../assets/plantcare-plant3.svg"
@@ -137,14 +139,18 @@ export const PlantcarePage = () => {
           </h3>
           <div className="flex flex-col items-center md:items-start row-start-3 row-span-5 md:h-full px-10 md:px-0 md:pb-9 order-last md:order-none">
             <h4 className="font-bold text-lg md:text-xl md:pt-4">
+              <Link to="/product/26">
               ZZ Plant (Zamioculcas zamiifolia)
+              </Link>
             </h4>
             <p className="md:text-lg">
               Tough, stylish, and almost impossible to kill. The ZZ plant
               handles low light like a champ and only needs occasional watering.
             </p>
             <h4 className="font-bold text-lg md:text-xl md:pt-6">
+              <Link to="/product/4">
               Snake Plant (Sansevieria)
+              </Link>
             </h4>
             <p className="md:text-lg">
               With its upright leaves and minimal care needs, the snake plant is
@@ -152,10 +158,12 @@ export const PlantcarePage = () => {
               purifies the air, too.
             </p>
             <h4 className="font-bold text-lg md:text-xl md:pt-6">
-              Pothos (Epipremnum aureum)
+              <Link to="/product/5">
+              Golden Pothos (Epipremnum aureum)
+              </Link>
             </h4>
             <p className="md:text-lg">
-              A trailing beauty that adds a jungle feel to your home. Pothos
+              A trailing beauty that adds a jungle feel to your home. Golden Pothos
               grows well in low light and can handle the occasional forgotten
               watering.
             </p>
@@ -167,6 +175,7 @@ export const PlantcarePage = () => {
           />
         </div>
       </div>
+      <LowLightPlants />
     </div>
   )
 }
