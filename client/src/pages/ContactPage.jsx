@@ -50,7 +50,7 @@ export const ContactPage = () => {
     <div className="w-full overflow-hidden">
       <NavigationRow links={[{ text: "Contact", to: "/contact" }]} />
 
-      <div className="container flex flex-col items-center justify-center gap-4 lg:gap-7 px-4 md:w-150 lg:w-230 mx-auto">
+      <div className="container flex flex-col items-center justify-center gap-4 lg:gap-7 px-4 md:w-200 lg:w-230 mx-auto">
         <div className="w-3xs md:w-150 lg:w-220 flex flex-col items-center justify-center gap-2 md:gap-0 mb-[30px] lg:gap-10">
           <h2 className="font-semibold text-[28px] md:text-[40px]">Contact</h2>
           <p className="text-xl whitespace-normal">
