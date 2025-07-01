@@ -56,16 +56,7 @@ export const PlantcarePage = () => {
           <h3 className="text-left font-semibold text-2xl md:text-[32px] self-end">
             Essentials for healthy houseplants
           </h3>
-          <div
-            className="
-            flex 
-            flex-col 
-            items-start 
-            row-start-2 
-            row-span-7 
-            md:h-full 
-            md:pb-9"
-          >
+          <div className="flex flex-col items-start row-start-2 row-span-7 md:h-full md:pb-9">
             <h4 className="font-bold text-lg md:text-xl pt-4">
               Let there be light
             </h4>
@@ -122,7 +113,6 @@ export const PlantcarePage = () => {
             md:grid 
             grid-cols-2 
             grid-rows-8 
-            lg:h-131
             lg:gap-x-11
             lg:pr-11
           "
@@ -130,7 +120,7 @@ export const PlantcarePage = () => {
           <h3 className="text-left font-semibold text-2xl md:text-[32px] self-end col-start-2">
             Common signs your plant needs help
           </h3>
-          <div className="flex flex-col items-start row-start-2 row-span-7 col-start-2 md:h-full">
+          <div className="flex flex-col items-start row-start-2 row-span-7 col-start-2 md:h-full md:pb-9">
             <p className="text-left font-light text-lg md:text-xl">
               Even the easiest houseplants can have a rough time now and then.
               Here are a few common signs to watch out for:
@@ -148,11 +138,11 @@ export const PlantcarePage = () => {
               Often a sign that the air is too dry or the plant isn't getting
               enough water.
             </p>
-            <h4 className="font-bold text-lg md:text-xl">Droopy leaves</h4>
+            <h4 className="font-bold text-lg md:text-xl pt-6">Droopy leaves</h4>
             <p className="text-left md:text-lg">
               The soil might be too dry — or too wet. Feel it to be sure!
             </p>
-            <h4 className="font-bold text-lg md:text-xl">
+            <h4 className="font-bold text-lg md:text-xl pt-6">
               No growth during spring/summer
             </h4>
             <p className="text-left md:text-lg">
@@ -169,33 +159,40 @@ export const PlantcarePage = () => {
           className="
           bg-[#E9E2DB] 
             w-full 
-            flex 
-            flex-col 
-            items-start 
-            justify-start
-            md:grid 
+            flex flex-col items-start 
+            justify-start md:grid 
             grid-cols-2 
             grid-rows-8 
-            lg:h-164
+            lg:gap-x-11
             lg:pl-11
           "
         >
-          <h3 className="font-semibold text-2xl md:text-[32px] self-end">
+          <h3 className="text-left font-semibold text-2xl md:text-[32px] self-end">
             Top 3 low-light plants
           </h3>
-          <div className="flex flex-col items-start justify-between row-start-2 row-span-7 gap-2 md:h-full md:pt-3">
-            <p>
+          <div
+            className="
+                flex 
+                flex-col 
+                items-start 
+                row-start-2 
+                row-span-7 
+                md:h-full 
+                md:pb-9
+              "
+          >
+            <p className="text-left font-light text-lg md:text-xl">
               No sun? No problem. These green friends thrive in spaces with
               minimal light and are perfect for shady corners or cozy rooms.
             </p>
-            <h4 className="font-bold text-lg md:text-xl">
+            <h4 className="font-bold text-lg md:text-xl md:pt-4">
               ZZ Plant (Zamioculcas zamiifolia)
             </h4>
             <p className="text-left md:text-lg">
               Tough, stylish, and almost impossible to kill. The ZZ plant
               handles low light like a champ and only needs occasional watering.
             </p>
-            <h4 className="font-bold text-lg md:text-xl">
+            <h4 className="font-bold text-lg md:text-xl md:pt-6">
               Snake Plant (Sansevieria)
             </h4>
             <p className="text-left md:text-lg">
@@ -203,7 +200,7 @@ export const PlantcarePage = () => {
               ideal for beginners. It does well in indirect or low light and
               purifies the air, too.
             </p>
-            <h4 className="font-bold text-lg md:text-xl">
+            <h4 className="font-bold text-lg md:text-xl md:pt-6">
               Pothos (Epipremnum aureum)
             </h4>
             <p className="text-left md:text-lg">
