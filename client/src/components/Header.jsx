@@ -4,7 +4,6 @@ import { appContentStore } from "../stores/appContentStore"
 import { favoriteContentStore } from "../stores/favoritesContentStore"
 import { Menu } from "./Menu"
 import { CartPanel } from "./CartPanel"
-import React from "react"
 
 export const Header = () => {
   const navigate = useNavigate()
@@ -41,12 +40,13 @@ export const Header = () => {
   return (
     <header
       className="
-    w-full
-    fixed
-    top-0
-    z-50
-    bg-white
-    max-w-[1440px]"
+        w-screen
+        fixed
+        top-0
+        z-50
+        bg-white
+        max-w-[1440px]
+      "
     >
       <div
         className={`
@@ -97,9 +97,9 @@ export const Header = () => {
               }
               alt="Favorite hearts"
               className={`
-            w-[36px]
-            h-[36px]
-            cursor-pointer ${animateHeart ? "scale-125" : ""}`}
+                w-[36px]
+                h-[36px]
+                cursor-pointer ${animateHeart ? "scale-125" : ""}`}
             />
           </button>
 

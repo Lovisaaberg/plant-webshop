@@ -19,7 +19,7 @@ function App() {
     <BrowserRouter>
       <ScrollToTop />
       <Header />
-      <main className="pt-[120px]">
+      <main className="pt-[120px] w-full">
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/products" element={<PlantsPage />} />

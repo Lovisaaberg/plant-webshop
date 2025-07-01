@@ -47,25 +47,17 @@ export const ContactPage = () => {
   }
 
   return (
-    <>
+    <div className="w-full overflow-hidden">
       <NavigationRow links={[{ text: "Contact", to: "/contact" }]} />
 
       <div className="container flex flex-col items-center justify-center gap-4 lg:gap-7 px-4 md:w-150 lg:w-230 mx-auto">
-        <div className="w-3xs md:w-100 lg:w-140 flex flex-col items-center justify-center gap-2 md:gap-0">
-          <h2
-            className="
-      text-[28px] 
-      md:text-[40px] 
-      font-semibold"
-          >
-            Contact
-          </h2>
-          <p className="text-base whitespace-normal">
+        <div className="w-3xs md:w-150 lg:w-220 flex flex-col items-center justify-center gap-2 md:gap-0 mb-[30px] lg:gap-10">
+          <h2 className="font-semibold text-[28px] md:text-[40px]">Contact</h2>
+          <p className="text-xl whitespace-normal">
             Whether you have questions about plant care, need help with your
             order, or just want to know more about our products - we'd love to
             hear from you.
-          </p>
-          <p className="text-base mb-[30px]">
+            <br />
             Fill in the form, and we'll get back to you as soon as we can.
           </p>
         </div>
@@ -156,6 +148,6 @@ export const ContactPage = () => {
           )}
         </form>
       </div>
-    </>
+    </div>
   )
 }

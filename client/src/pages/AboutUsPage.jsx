@@ -3,7 +3,7 @@ import { NavigationRow } from "../components/NavigationRow"
 
 export const AboutUsPage = () => {
   return (
-    <>
+    <div className="w-full overflow-hidden">
       <NavigationRow links={[{ text: "About Us", to: "/aboutus" }]} />
 
       <div
@@ -311,6 +311,6 @@ export const AboutUsPage = () => {
           />
         </div>
       </div>
-    </>
+    </div>
   )
 }

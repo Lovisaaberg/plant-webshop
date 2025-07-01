@@ -48,13 +48,13 @@ export const Menu = ({ handleMenuClick }) => {
 
       <ul
         className="
-      hidden 
-      md:flex 
-      flex-row 
-      lg:gap-[60px] 
-      md:gap-[30px] 
-      justify-center 
-      text-2xl"
+          hidden 
+          md:flex 
+          flex-row 
+          lg:gap-[60px] 
+          md:gap-[30px] 
+          justify-center 
+          text-2xl"
       >
         {menuLinks.map((link, index) => (
           <li key={`navlink-${index}`}>
