@@ -73,12 +73,7 @@ export const ProductCard = ({ product, className = "" }) => {
         </div>
       </Link>
 
-      <div
-        className="
-      lg:flex 
-      lg:justify-between
-      "
-      >
+      <div className="flex items-center justify-between">
         <p
           className="
         text-left 
@@ -89,13 +84,7 @@ export const ProductCard = ({ product, className = "" }) => {
           {product.price} kr
         </p>
 
-        <div
-          className="
-        flex 
-        mb-[60px]
-        mt-[16px]
-        lg:mt-0"
-        >
+        <div className="flex mt-0">
           <Button func={() => toggleFavorite(product.id)}>
             <img
               src={
