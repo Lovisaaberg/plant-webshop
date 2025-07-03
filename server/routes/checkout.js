@@ -22,9 +22,9 @@ router.post("/create-checkout-session", async (req, res) => {
     payment_method_types: ["card"],
     line_items: line_items,
     mode: "payment",
-    success_url: `http://localhost:5173/order?session_id={CHECKOUT_SESSION_ID}`,
-    cancel_url: `http://localhost:5173/order?session_id={CHECKOUT_SESSION_ID}`,
-  });
+    success_url: `https://webshop-eta-ten.vercel.app/order?session_id={CHECKOUT_SESSION_ID}`,
+    cancel_url: `https://webshop-eta-ten.vercel.app/order?session_id={CHECKOUT_SESSION_ID}`,
+  })
 
   res.json({ id: session.id });
 });
