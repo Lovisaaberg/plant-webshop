@@ -104,7 +104,7 @@ export const Header = () => {
           </button>
 
           <button
-            className="mr-[60px] flex items-center gap-2"
+            className="mr-[20px] flex items-center gap-2"
             onClick={openPanel}
           >
             <div
