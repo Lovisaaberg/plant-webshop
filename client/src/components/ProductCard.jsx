@@ -73,7 +73,17 @@ export const ProductCard = ({ product, className = "" }) => {
         </div>
       </Link>
 
-      <div className="flex items-center justify-between">
+      <div
+        className="
+      flex 
+      flex-col 
+      lg:flex-row 
+      items-start 
+      lg:items-center 
+      justify-between 
+      gap-2 
+      mt-2"
+      >
         <p
           className="
         text-left 
@@ -90,7 +100,7 @@ export const ProductCard = ({ product, className = "" }) => {
               src={
                 isFavorite
                   ? "/icons/heart-icon-green.png"
-                  : "/icons/heart-mobile-menu.png"
+                  : "/icons/heart-icon.png"
               }
               alt={isFavorite ? "Remove from favorites" : "Add to favorites"}
               className="

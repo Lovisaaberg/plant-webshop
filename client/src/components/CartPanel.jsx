@@ -106,7 +106,7 @@ export const CartPanel = ({ isOpen, onClose }) => {
           h-10
           md:h-12
           lg:h-12 
-          bg-[#2C7E62] 
+          bg-[#24614C] 
           text-white 
           rounded-[10px] 
           shadow-md 

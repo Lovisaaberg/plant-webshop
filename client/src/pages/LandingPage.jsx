@@ -74,13 +74,13 @@ export const LandingPage = () => {
               text="View tips"
               func={handleNavigate}
               className="
-              bg-[#D79E00] 
+              bg-[#24614C] 
               text-white 
               rounded-[50px] 
               w-[180px] 
               h-[40px] 
               shadow-md 
-              hover:bg-[#AE8000] 
+              hover:bg-[#224337] 
               cursor-pointer"
             />
           </div>
@@ -158,12 +158,12 @@ export const LandingPage = () => {
                 text="View tips"
                 func={handleNavigate}
                 className="
-                bg-[#D79E00] 
+                bg-[#24614C]
                 text-white 
                 rounded-[50px] 
                 w-[180px] 
                 h-[50px] 
-                shadow-md hover:bg-[#AE8000] cursor-pointer"
+                shadow-md hover:bg-[#224337] cursor-pointer"
               />
             </div>
           </div>

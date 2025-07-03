@@ -128,14 +128,14 @@ export const ContactPage = () => {
           w-3xs
           md:w-60
           h-13 
-          bg-[#2C7E62] 
+          bg-[#24614C] 
           text-white 
           rounded-[10px] 
           shadow-md 
           mt-[24px]
           md:mt-0
           self-center
-          hover:bg-[#00583A]
+          hover:bg-[#224337]
           font-quicksand
           md:col-start-2
           row-start-2

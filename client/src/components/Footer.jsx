@@ -30,6 +30,7 @@ export const Footer = () => {
               href="https://www.facebook.com/yourprofile"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Follow us on Facebook"
             >
               <FaFacebook size={36} />
             </a>
@@ -39,6 +40,7 @@ export const Footer = () => {
               href="https://www.instagram.com/yourprofile"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Follow us on Instagram"
             >
               <RiInstagramFill size={40} />
             </a>
