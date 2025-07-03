@@ -84,12 +84,12 @@ export const SelectedPlants = () => {
         className="
           w-[180px] 
           h-[50px] 
-          bg-[#D79E00] 
+          bg-[#24614C]  
           text-white 
           rounded-[50px] 
           shadow-md 
           mt-[24px]
-          hover:bg-[#AE8000]
+          hover:bg-[#224337]
           hover:cursor-pointer"
       />
     </section>

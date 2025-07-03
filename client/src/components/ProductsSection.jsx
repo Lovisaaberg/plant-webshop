@@ -56,7 +56,7 @@ export const ProductsSection = ({ title = "Our Plants" }) => {
     mt-[40px]
     md:px-[20px]"
     >
-      <h2 className="text-[18px] md:text-[40px] font-semibold mb-[30px]">
+      <h2 className="text-[28px] md:text-[40px] font-semibold mb-[30px]">
         {title}
       </h2>
       <input

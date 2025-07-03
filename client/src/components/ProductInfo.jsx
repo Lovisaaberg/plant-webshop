@@ -73,7 +73,7 @@ export const ProductInfo = ({ product }) => {
                 src={
                   isFavorite
                     ? "/icons/heart-icon-green.png"
-                    : "/icons/heart-mobile-menu.png"
+                    : "/icons/heart-icon.png"
                 }
                 alt="Favorite icon"
                 className="h-8 cursor-pointer"
@@ -199,13 +199,13 @@ export const ProductInfo = ({ product }) => {
           md:w-30
           lg:w-45
           h-[40px] 
-          bg-[#2C7E62] 
+          bg-[#24614C] 
           text-white 
           rounded-[10px] 
           shadow-md 
           mt-[24px]
           self-center
-          hover:bg-[#00583A]
+          hover:bg-[#224337]
           disabled:bg-gray-400
           disabled:cursor-not-allowed
           font-quicksand
