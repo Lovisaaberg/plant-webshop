@@ -18,7 +18,7 @@ export const OrderPage = () => {
 
     try {
       const res = await fetch(
-        `http://localhost:3000/api/stripe/checkout-session?sessionId=${sessionId}`
+        `https://webshop-fqmj.vercel.app/api/stripe/checkout-session?sessionId=${sessionId}`
       )
       if (!res.ok) throw new Error("Could not fetch session")
 

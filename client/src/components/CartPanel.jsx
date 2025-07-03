@@ -11,7 +11,7 @@ export const CartPanel = ({ isOpen, onClose }) => {
   const handleCheckout = async () => {
     onClose()
     const response = await fetch(
-      "http://localhost:3000/api/stripe/create-checkout-session",
+      "https://webshop-fqmj.vercel.app/api/stripe/create-checkout-session",
       {
         method: "POST",
         headers: {
