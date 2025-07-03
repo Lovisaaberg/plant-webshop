@@ -26,7 +26,6 @@ export const HeroSection = () => {
         object-[60%_top] md:object-center"
       />
 
-      {/* Gradient-overlay */}
       <div
         className="
       absolute 
@@ -36,7 +35,6 @@ export const HeroSection = () => {
       z-10"
       />
 
-      {/* Text ovanpå bild */}
       <div
         className="
       absolute 
@@ -49,7 +47,7 @@ export const HeroSection = () => {
       md:items-start 
       md:justify-start
       md:text-left
-      mt-[80px] 
+      mt-[140px] 
       px-15 
       text-white
 
