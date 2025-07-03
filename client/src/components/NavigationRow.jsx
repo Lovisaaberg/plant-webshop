@@ -3,7 +3,7 @@ import House from "/icons/house.svg"
 
 export const NavigationRow = ({ links }) => {
   return (
-    <div className="w-full flex justify-start items-center ml-10 md:ml-25 mt-6 mb-10">
+    <div className="max-w-[1440px] flex justify-start items-center ml-10 md:ml-25 mt-6 mb-10">
       <Link to="/">
         <img
           src={House}
