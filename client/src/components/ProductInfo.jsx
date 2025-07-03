@@ -3,6 +3,7 @@ import { appContentStore } from "../stores/appContentStore"
 import { QuantitySelector } from "./QuantitySelector"
 import { favoriteContentStore } from "../stores/favoritesContentStore"
 import { Button } from "./Button"
+import { RelatedPlants } from "./RelatedPlants"
 import Light from "/icons/light-icon.png"
 import Water from "/icons/water-icon.png"
 
@@ -25,8 +26,9 @@ export const ProductInfo = ({ product }) => {
   }
 
   return (
-    <div
-      className="
+    <>
+      <div
+        className="
     container 
     flex 
     flex-col 
@@ -43,57 +45,57 @@ export const ProductInfo = ({ product }) => {
     md:w-150 
     lg:w-220 
     mx-auto"
-    >
-      <div
-        className="
+      >
+        <div
+          className="
       col-start-2 
       w-3xs 
       md:w-65 
       lg:w-100"
-      >
-        <h2
-          className="
+        >
+          <h2
+            className="
         text-2xl 
         lg:text-4xl 
         overflow-hidden 
         font-semibold 
         flex 
         justify-between"
-        >
-          {product.name}
-          <button
-            onClick={handleToggleFavorite}
-            aria-label={
-              isFavorite ? "Remove from favorites" : "Add to favorites"
-            }
           >
-            <img
-              src={
-                isFavorite
-                  ? "/icons/heart-icon-green.png"
-                  : "/icons/heart-mobile-menu.png"
+            {product.name}
+            <button
+              onClick={handleToggleFavorite}
+              aria-label={
+                isFavorite ? "Remove from favorites" : "Add to favorites"
               }
-              alt="Favorite icon"
-              className="h-8 cursor-pointer"
-            />
-          </button>
-        </h2>
-        <p
-          className="
+            >
+              <img
+                src={
+                  isFavorite
+                    ? "/icons/heart-icon-green.png"
+                    : "/icons/heart-mobile-menu.png"
+                }
+                alt="Favorite icon"
+                className="h-8 cursor-pointer"
+              />
+            </button>
+          </h2>
+          <p
+            className="
         font-roboto 
         font-light 
         italic 
         text-base 
         lg:text-2xl 
         mt-1"
-        >
-          {product.latin_name}
-        </p>
-      </div>
-      <img
-        src={product.image}
-        alt={product.name}
-        className="
+          >
+            {product.latin_name}
+          </p>
+        </div>
+        <img
+          src={product.image}
+          alt={product.name}
+          className="
         w-3xs 
         h-90 
         object-cover 
@@ -102,50 +104,50 @@ export const ProductInfo = ({ product }) => {
         col-start-1 
         row-start-1 
         row-span-3"
-      />
-      <div
-        className="
+        />
+        <div
+          className="
       flex 
       flex-col 
       col-start-2 
       w-3xs 
       lg:w-100 
       gap-6"
-      >
-        <div
-          className="
+        >
+          <div
+            className="
         flex 
         items-center 
         gap-2"
-        >
-          <img
-            src={Light}
-            alt="Icon for light preference"
-            className="h-[36px]"
-          />
+          >
+            <img
+              src={Light}
+              alt="Icon for light preference"
+              className="h-[36px]"
+            />
 
-          <p className="text-base md:hidden">
-            Light: <br /> {product.light}
-          </p>
+            <p className="text-base md:hidden">
+              Light: <br /> {product.light}
+            </p>
 
-          <p className="text-base hidden md:block">Light: {product.light}</p>
-        </div>
-        <div
-          className="
+            <p className="text-base hidden md:block">Light: {product.light}</p>
+          </div>
+          <div
+            className="
         flex 
         items-center 
         gap-2"
-        >
-          <img src={Water} alt="Icon for water needs" className="h-[36px]" />
+          >
+            <img src={Water} alt="Icon for water needs" className="h-[36px]" />
 
-          <p className="text-base md:hidden">
-            Water: <br /> {product.water}
-          </p>
-          <p className="text-base hidden md:block">Water: {product.water}</p>
+            <p className="text-base md:hidden">
+              Water: <br /> {product.water}
+            </p>
+            <p className="text-base hidden md:block">Water: {product.water}</p>
+          </div>
         </div>
-      </div>
-      <div
-        className="
+        <div
+          className="
       w-3xs 
       md:w-65 
       lg:w-100 
@@ -159,9 +161,9 @@ export const ProductInfo = ({ product }) => {
       col-start-2 
       order-1 
       md:order-0"
-      >
-        <p
-          className="
+        >
+          <p
+            className="
         text-2xl 
         lg:text-3xl 
         font-semibold 
@@ -171,28 +173,28 @@ export const ProductInfo = ({ product }) => {
         justifify-self-start 
         md:self-end 
         md:justify-self-end"
-        >
-          {product.price} kr
-        </p>
-        <QuantitySelector
-          startQuantity={quantity}
-          handler={(event) => changeQuantity(event)}
-          styleLabel="
+          >
+            {product.price} kr
+          </p>
+          <QuantitySelector
+            startQuantity={quantity}
+            handler={(event) => changeQuantity(event)}
+            styleLabel="
           gap-2 
           md:row-start-2 md:justify-self-end md:items-end"
-          styleText="text-lg"
-          styleBox="h-10"
-        />
-        <Button
-          text="Add to Cart"
-          func={() => {
-            if (quantity > 0) {
-              addToCart(product, quantity)
-              setQuantity(1)
-            }
-          }}
-          disabled={quantity === 0}
-          className="
+            styleText="text-lg"
+            styleBox="h-10"
+          />
+          <Button
+            text="Add to Cart"
+            func={() => {
+              if (quantity > 0) {
+                addToCart(product, quantity)
+                setQuantity(1)
+              }
+            }}
+            disabled={quantity === 0}
+            className="
           w-3xs
           md:w-30
           lg:w-45
@@ -212,10 +214,10 @@ export const ProductInfo = ({ product }) => {
           lg:justify-self-end
           lg:self-end
           "
-        />
-      </div>
-      <div
-        className="
+          />
+        </div>
+        <div
+          className="
       w-3xs 
       md:w-135 
       lg:w-215 
@@ -224,23 +226,29 @@ export const ProductInfo = ({ product }) => {
       gap-1 
       mt-1 
       col-span-2"
-      >
-        <h3
-          className="
+        >
+          <h3
+            className="
         text-2xl 
         font-bold
         mt-4"
-        >
-          Plant description
-        </h3>
-        <p
-          className="
+          >
+            Plant description
+          </h3>
+          <p
+            className="
         text-lg 
         font-light"
-        >
-          {product.description}
-        </p>
+          >
+            {product.description}
+          </p>
+        </div>
       </div>
-    </div>
+
+      <RelatedPlants
+        category={product.category}
+        currentProductId={product.id}
+      />
+    </>
   )
 }
