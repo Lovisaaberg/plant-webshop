@@ -17,7 +17,7 @@ export const PlantcarePage = () => {
           <h2 className="font-semibold text-[28px] md:text-[40px]">
             Simple tips to keep your plants happy
           </h2>
-          <p className="font-light lg:font-normal text-lg md:text-xl">
+          <p className="font-light lg:font-normal text-lg md:text-xl mb-[30px]">
             Not sure where to start with plant care? Here are some easy,
             beginner-friendly tips that work for most houseplants, from watering
             to light and beyond.
@@ -45,7 +45,7 @@ export const PlantcarePage = () => {
             Essentials for healthy houseplants
           </h3>
           <div className="flex flex-col items-center md:items-start row-start-2 row-span-7 md:h-full px-10 lg:px-0 md:pb-9 order-last md:order-none">
-            <h4 className="font-bold text-lg md:text-xl pt-4">
+            <h4 className="font-bold text-lg md:text-xl pt-10">
               Let there be light
             </h4>
             <p className="font-light lg:font-normal text-base md:text-lg">
@@ -90,10 +90,10 @@ export const PlantcarePage = () => {
             className="object-cover h-81 md:h-full w-65 md:w-full row-span-8"
           />
         </div>
-        <div className="bg-[#E9E2DB] w-full flex flex-col items-center justify-center md:grid grid-cols-2 grid-rows-7 md:items-start md:justify-start py-6 md:py-0 gap-6 md:gap-0 lg:gap-x-11 lg:pr-11 text-center md:text-left">
+        <div className="bg-[#E9E2DB] w-full flex flex-col items-center justify-center md:grid grid-cols-2 grid-rows-7 md:items-start md:justify-start py-6 md:py-0 gap-6 md:gap-0 lg:gap-x-11 lg:pr-11 text-center md:text-left mt-[120px]">
           <h3 className="font-semibold text-2xl md:text-[32px] md:self-end col-start-2 row-span-2 px-10 lg:px-0 md:pt-10">
             Common signs your plant needs help
-            <p className="font-normal md:font-light text-lg md:text-xl mt-5 md:mt-0">
+            <p className="font-light text-lg md:text-xl mt-5 md:mt-0 mb-[30px]">
               Even the easiest houseplants can have a rough time now and then.
               Here are a few common signs to watch out for:
             </p>
@@ -129,10 +129,10 @@ export const PlantcarePage = () => {
             className="object-cover h-81 md:h-full w-65 md:w-full row-span-8 col-start-1 row-start-1"
           />
         </div>
-        <div className="bg-[#E9E2DB] w-full flex flex-col items-center justify-center md:grid grid-cols-2 grid-rows-7 md:items-start md:justify-start py-6 md:py-0 gap-6 md:gap-0 lg:gap-x-11 lg:pl-11 text-center md:text-left">
+        <div className="bg-[#E9E2DB] w-full flex flex-col items-center justify-center md:grid grid-cols-2 grid-rows-7 md:items-start md:justify-start py-6 md:py-0 gap-6 md:gap-0 lg:gap-x-11 lg:pl-11 text-center md:text-left mt-[120px]">
           <h3 className="font-semibold text-2xl md:text-[32px] md:self-end row-span-2 px-10 lg:px-0 md:pt-10">
             Top 3 low-light plants
-            <p className="font-normal md:font-light text-lg md:text-xl mt-5 md:mt-0">
+            <p className="font-light text-lg md:text-xl mt-5 md:mt-0 mb-[30px]">
               No sun? No problem. These green friends thrive in spaces with
               minimal light and are perfect for shady corners or cozy rooms.
             </p>
@@ -165,7 +165,7 @@ export const PlantcarePage = () => {
           <img
             src={ImageLowlight}
             alt="Snake plant."
-            className="object-cover h-81 md:h-full w-65 md:w-full row-span-8"
+            className="object-cover h-81 md:h-full w-65 md:w-full row-span-8 "
           />
         </div>
       </div>

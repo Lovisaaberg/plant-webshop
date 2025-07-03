@@ -72,7 +72,8 @@ export const LowLightPlants = () => {
             product={plant}
             className="              
               w-[260px]
-              [&_.product-image]:h-[350px]"
+              [&_.product-image]:h-[350px]
+              mb-[120px]"
           />
         ))}
       </div>

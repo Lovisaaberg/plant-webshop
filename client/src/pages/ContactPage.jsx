@@ -141,6 +141,7 @@ export const ContactPage = () => {
           row-start-2
           lg:justify-self-end
           lg:self-start
+          mb-[120px]
           "
           />
           {formSubmitted && (
