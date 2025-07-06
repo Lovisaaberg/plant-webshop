@@ -18,7 +18,7 @@ export const OrderPage = () => {
 
     try {
       const res = await fetch(
-        `https://plants-webshop.onrender.com/api/stripe/checkout-session?sessionId=${sessionId}`
+        `https://plant-webshop.onrender.com/api/stripe/checkout-session?sessionId=${sessionId}`
       )
       if (!res.ok) throw new Error("Could not fetch session")
 
