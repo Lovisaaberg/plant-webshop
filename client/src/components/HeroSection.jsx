@@ -78,7 +78,8 @@ export const HeroSection = () => {
           text-white 
           rounded-[50px] 
           shadow-md 
-          hover:bg-[#224337]"
+          hover:bg-[#224337]
+          cursor-pointer"
         />
       </div>
     </div>

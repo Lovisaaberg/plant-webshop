@@ -83,12 +83,12 @@ export const SelectedPlants = () => {
         func={handleNavigate}
         className="
           w-[180px] 
-          h-[50px] 
+          h-[40px] 
           bg-[#24614C]  
           text-white 
           rounded-[50px] 
           shadow-md 
-          mt-[24px]
+          mt-[60px]
           hover:bg-[#224337]
           hover:cursor-pointer"
       />
